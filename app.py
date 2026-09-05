@@ -86,255 +86,67 @@ def new_count():
     return value
 
 
-TRANSLATIONS = {'en': {'nav_home': 'Home',
-        'nav_about': 'About',
-        'nav_services': 'Services',
-        'nav_clinic': 'Clinic',
-        'nav_help': 'Assistance',
-        'nav_staff': 'Staff',
-        'tag': 'Licensed Physician & Psychiatrist',
-        'hero_title': 'Your mind deserves <span>care.</span>',
-        'hero_text': 'Compassionate, patient-centered psychiatric care focused on helping you understand your mental well-being and move '
-                     'toward a healthier, more fulfilling life.',
-        'help': 'I Need Assistance',
-        'meet': 'Meet Dr. Tagupa →',
-        'licensed': 'Licensed Physician',
-        'licensed_text': 'A medical doctor committed to compassionate, patient-centered care.',
-        'psychiatry': 'Psychiatry',
-        'psychiatry_text': 'Psychiatric evaluation and treatment for a wide range of mental health concerns.',
-        'centered': 'Patient-Centered',
-        'centered_text': 'Your story, concerns, and well-being are at the heart of every consultation.',
-        'about_kicker': 'About the Doctor',
-        'about_title': 'Compassion backed by training.',
-        'about_intro': 'Professional medical and psychiatric training with a patient-centered approach.',
-        'about_head': 'Meet Dr. Tagupa',
-        'about1': 'Dr. Bebie Queen Lucelle R. Tagupa is a licensed physician and psychiatrist dedicated to providing compassionate, '
-                  'patient-centered mental health care.',
-        'about2': 'She earned her Bachelor’s degree in Medical Technology from Velez College and is also a licensed Medical Technologist.',
-        'about3': 'She proceeded to study Medicine at Xavier University – Ateneo de Cagayan.',
-        'about4': 'She completed her post-graduate internship at Davao Doctors Hospital and finished her residency training in Psychiatry '
-                  'at the Southern Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.',
-        'about5': 'During her final year of training, she served as Chief Resident and was awarded Most Outstanding Resident in Psychiatry '
-                  'during her graduation.',
-        'services_kicker': 'Mental Health Care',
-        'services_title': 'Care that starts with you.',
-        'services_intro': 'Support for understanding your mental well-being and moving forward.',
-        'eval': 'Psychiatric Evaluation',
-        'eval_text': 'Comprehensive assessment to better understand mental health concerns.',
-        'consult': 'Mental Health Consultation',
-        'consult_text': 'A respectful space to discuss concerns, emotions, thoughts, and behavior.',
-        'treatment': 'Treatment & Follow-Up',
-        'treatment_text': 'Patient-centered treatment and follow-up based on individual needs.',
-        'clinic_kicker': 'Clinic Information',
-        'clinic_title': 'Visit the clinic.',
-        'clinic_intro': 'Find the location and consultation schedule below.',
-        'hospital': 'Hospital',
-        'location': 'Location',
-        'days': 'Days',
-        'time': 'Time',
-        'days_value': 'Tuesday • Thursday • Saturday',
-        'time_value': '9:00 AM – 4:00 PM',
-        'help_kicker': 'Patient Assistance',
-        'help_title': 'Need a little help?',
-        'help_text': 'Tell the clinic what you need. Your request will appear on the protected staff dashboard so the clinic team can '
-                     'follow up.',
-        'name': 'Name',
-        'contact': 'Contact',
-        'urgency': 'How urgent is this?',
-        'language': 'Preferred language',
-        'concern': 'How can we help?',
-        'send': 'Send Assistance Request →',
-        'placeholder_name': 'Your name',
-        'placeholder_contact': 'Phone or email',
-        'placeholder_concern': 'Tell the clinic what you need assistance with...',
-        'warning': 'Please do not use this form for emergencies. For an immediate medical or safety emergency, contact your local '
-                   'emergency services.',
-        'resources_kicker': 'Wellness Resources',
-        'resources_title': 'Small steps can help.',
-        'resources_intro': 'A self-care card is available here as an educational wellness resource. It is not a substitute for '
-                           'professional care.',
-        'open_pdf': 'Open Self-Care Card (PDF) →',
-        'resource_alt': 'Self-care wellness resource',
-        'footer': 'Licensed Physician • Psychiatrist',
-        'quote': '“Mental health care begins with <span class="accent">being heard.</span>”',
-        'hospital_name': 'Medina General Hospital',
-        'opd_door': 'OPD Door 2',
-        'footer_days': 'Tuesday, Thursday & Saturday',
-        'footer_time': '9:00 AM – 4:00 PM',
-        'urgency_normal': 'Normal',
-        'urgency_soon': 'Needs attention soon',
-        'urgency_urgent': 'Urgent',
-        'photo_role': 'Licensed Physician • Psychiatrist',
-        'flash_complete': 'Please complete your name, contact information, and assistance request.',
-        'flash_sent': 'Your assistance request has been sent to the clinic team.'},
- 'fil': {'nav_home': 'Home',
-         'nav_about': 'Tungkol sa Doktor',
-         'nav_services': 'Serbisyo',
-         'nav_clinic': 'Klinika',
-         'nav_help': 'Tulong',
-         'nav_staff': 'Staff',
-         'tag': 'Licensed Physician at Psychiatrist',
-         'hero_title': 'Ang iyong isip ay karapat-dapat sa <span>pag-aalaga.</span>',
-         'hero_text': 'Maalaga at patient-centered na psychiatric care upang matulungan kang maunawaan ang iyong mental well-being at '
-                      'mapabuti ang kalidad ng iyong buhay.',
-         'help': 'Kailangan Ko ng Tulong',
-         'meet': 'Kilalanin si Dr. Tagupa →',
-         'licensed': 'Licensed Physician',
-         'licensed_text': 'Doktor na nakatuon sa mahabagin at patient-centered na pangangalaga.',
-         'psychiatry': 'Psychiatry',
-         'psychiatry_text': 'Psychiatric evaluation at treatment para sa iba’t ibang mental health concerns.',
-         'centered': 'Patient-Centered',
-         'centered_text': 'Mahalaga ang iyong kuwento, mga alalahanin, at kapakanan sa bawat konsultasyon.',
-         'about_kicker': 'Tungkol sa Doktor',
-         'about_title': 'Mahusay na training, may malasakit.',
-         'about_intro': 'Propesyonal na medical at psychiatric training na may patient-centered na approach.',
-         'about_head': 'Kilalanin si Dr. Tagupa',
-         'about1': 'Si Dr. Bebie Queen Lucelle R. Tagupa ay isang licensed physician at psychiatrist na nakatuon sa mahabagin at '
-                   'patient-centered na mental health care.',
-         'about2': 'Natapos niya ang Bachelor’s degree sa Medical Technology sa Velez College at isa rin siyang licensed Medical '
-                   'Technologist.',
-         'about3': 'Nagpatuloy siya sa Medicine sa Xavier University – Ateneo de Cagayan.',
-         'about4': 'Nakumpleto niya ang post-graduate internship sa Davao Doctors Hospital at residency training sa Psychiatry sa Southern '
-                   'Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.',
-         'about5': 'Sa kanyang huling taon ng training, nagsilbi siya bilang Chief Resident at ginawaran bilang Most Outstanding Resident '
-                   'in Psychiatry.',
-         'services_kicker': 'Mental Health Care',
-         'services_title': 'Nagsisimula ang pag-aalaga sa iyo.',
-         'services_intro': 'Suporta para mas maunawaan ang iyong mental well-being at makapagpatuloy.',
-         'eval': 'Psychiatric Evaluation',
-         'eval_text': 'Masusing assessment upang mas maunawaan ang iyong mental health concerns.',
-         'consult': 'Mental Health Consultation',
-         'consult_text': 'Ligtas at magalang na lugar para pag-usapan ang iyong concerns, emosyon, isip, at behavior.',
-         'treatment': 'Treatment & Follow-Up',
-         'treatment_text': 'Patient-centered treatment at follow-up ayon sa iyong pangangailangan.',
-         'clinic_kicker': 'Impormasyon ng Klinika',
-         'clinic_title': 'Bumisita sa klinika.',
-         'clinic_intro': 'Narito ang lokasyon at schedule ng consultation.',
-         'hospital': 'Ospital',
-         'location': 'Lokasyon',
-         'days': 'Mga Araw',
-         'time': 'Oras',
-         'days_value': 'Martes • Huwebes • Sabado',
-         'time_value': '9:00 AM – 4:00 PM',
-         'help_kicker': 'Tulong para sa Pasyente',
-         'help_title': 'Kailangan mo ba ng kaunting tulong?',
-         'help_text': 'Sabihin sa clinic kung ano ang kailangan mo. Makikita ito ng authorized staff sa protected dashboard para ma-follow '
-                      'up ka.',
-         'name': 'Pangalan',
-         'contact': 'Contact',
-         'urgency': 'Gaano ito ka-urgent?',
-         'language': 'Mas gustong wika',
-         'concern': 'Paano ka namin matutulungan?',
-         'send': 'Ipadala ang Request →',
-         'placeholder_name': 'Iyong pangalan',
-         'placeholder_contact': 'Telepono o email',
-         'placeholder_concern': 'Sabihin kung anong tulong ang kailangan mo...',
-         'warning': 'Huwag gamitin ang form na ito para sa emergency. Para sa agarang medical o safety emergency, tumawag sa local '
-                    'emergency services.',
-         'resources_kicker': 'Wellness Resources',
-         'resources_title': 'Maliit na hakbang, malaking tulong.',
-         'resources_intro': 'May self-care card dito bilang educational wellness resource. Hindi ito kapalit ng professional care.',
-         'open_pdf': 'Buksan ang Self-Care Card (PDF) →',
-         'resource_alt': 'Self-care wellness resource',
-         'footer': 'Licensed Physician • Psychiatrist',
-         'quote': '“Nagsisimula ang mental health care sa <span class="accent">pakikinig.</span>”',
-         'hospital_name': 'Medina General Hospital',
-         'opd_door': 'OPD Door 2',
-         'footer_days': 'Martes, Huwebes at Sabado',
-         'footer_time': '9:00 AM – 4:00 PM',
-         'urgency_normal': 'Normal',
-         'urgency_soon': 'Kailangan ng pansin sa lalong madaling panahon',
-         'urgency_urgent': 'Urgent',
-         'photo_role': 'Licensed Physician • Psychiatrist',
-         'flash_complete': 'Pakikumpleto ang iyong pangalan, contact information, at assistance request.',
-         'flash_sent': 'Naipadala na ang iyong assistance request sa clinic team.'},
- 'ceb': {'nav_home': 'Home',
-         'nav_about': 'Mahitungod',
-         'nav_services': 'Serbisyo',
-         'nav_clinic': 'Clinic',
-         'nav_help': 'Tabang',
-         'nav_staff': 'Staff',
-         'tag': 'Licensed Physician ug Psychiatrist',
-         'hero_title': 'Ang imong hunahuna angay sa <span>pag-atiman.</span>',
-         'hero_text': 'Mainiton ug patient-centered nga psychiatric care aron matabangan ka nga masabtan ang imong mental well-being ug '
-                      'mapauswag ang kalidad sa imong kinabuhi.',
-         'help': 'Nanginahanglan Ko og Tabang',
-         'meet': 'Ilaila si Dr. Tagupa →',
-         'licensed': 'Licensed Physician',
-         'licensed_text': 'Doktor nga naghatag og maloloy-on ug patient-centered nga pag-atiman.',
-         'psychiatry': 'Psychiatry',
-         'psychiatry_text': 'Psychiatric evaluation ug treatment para sa lain-laing mental health concerns.',
-         'centered': 'Patient-Centered',
-         'centered_text': 'Importante ang imong istorya, kabalaka, ug kaayohan sa matag consultation.',
-         'about_kicker': 'Mahitungod sa Doktor',
-         'about_title': 'Maayong training, adunay malasakit.',
-         'about_intro': 'Propesyonal nga medical ug psychiatric training nga patient-centered ang approach.',
-         'about_head': 'Ilaila si Dr. Tagupa',
-         'about1': 'Si Dr. Bebie Queen Lucelle R. Tagupa usa ka licensed physician ug psychiatrist nga naghatag og maloloy-on ug '
-                   'patient-centered nga mental health care.',
-         'about2': 'Nakakuha siya sa Bachelor’s degree sa Medical Technology gikan sa Velez College ug usa usab siya ka licensed Medical '
-                   'Technologist.',
-         'about3': 'Nagpadayon siya sa Medicine sa Xavier University – Ateneo de Cagayan.',
-         'about4': 'Nakompleto niya ang post-graduate internship sa Davao Doctors Hospital ug residency training sa Psychiatry sa Southern '
-                   'Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.',
-         'about5': 'Sa iyang katapusang tuig sa training, nagsilbi siya isip Chief Resident ug nadawat ang award nga Most Outstanding '
-                   'Resident in Psychiatry.',
-         'services_kicker': 'Mental Health Care',
-         'services_title': 'Ikaw ang sinugdanan sa pag-atiman.',
-         'services_intro': 'Suporta aron masabtan ang imong mental well-being ug makapadayon.',
-         'eval': 'Psychiatric Evaluation',
-         'eval_text': 'Masusing assessment aron masabtan ang mental health concerns.',
-         'consult': 'Mental Health Consultation',
-         'consult_text': 'Marespeto nga lugar sa paghisgot sa concerns, emosyon, hunahuna, ug behavior.',
-         'treatment': 'Treatment & Follow-Up',
-         'treatment_text': 'Patient-centered treatment ug follow-up base sa imong panginahanglan.',
-         'clinic_kicker': 'Impormasyon sa Clinic',
-         'clinic_title': 'Bisitaha ang clinic.',
-         'clinic_intro': 'Ani-a ang lokasyon ug consultation schedule.',
-         'hospital': 'Ospital',
-         'location': 'Lokasyon',
-         'days': 'Mga Adlaw',
-         'time': 'Oras',
-         'days_value': 'Martes • Huwebes • Sabado',
-         'time_value': '9:00 AM – 4:00 PM',
-         'help_kicker': 'Tabang para sa Pasyente',
-         'help_title': 'Nanginahanglan og gamay nga tabang?',
-         'help_text': 'Sultihi ang clinic kung unsa imong gikinahanglan. Makita kini sa authorized staff sa protected dashboard aron '
-                      'ma-follow up ka.',
-         'name': 'Ngalan',
-         'contact': 'Contact',
-         'urgency': 'Unsa ka-urgent?',
-         'language': 'Piniling pinulongan',
-         'concern': 'Unsaon namo pagtabang?',
-         'send': 'Ipadala ang Request →',
-         'placeholder_name': 'Imong ngalan',
-         'placeholder_contact': 'Telepono o email',
-         'placeholder_concern': 'Isulti kung unsa nga tabang imong gikinahanglan...',
-         'warning': 'Ayaw gamita kini nga form para sa emergency. Para sa dali nga medical o safety emergency, kontaka ang local emergency '
-                    'services.',
-         'resources_kicker': 'Wellness Resources',
-         'resources_title': 'Gamay nga mga lakang makatabang.',
-         'resources_intro': 'Adunay self-care card dinhi isip educational wellness resource. Dili kini kapuli sa professional care.',
-         'open_pdf': 'Ablihi ang Self-Care Card (PDF) →',
-         'resource_alt': 'Self-care wellness resource',
-         'footer': 'Licensed Physician • Psychiatrist',
-         'quote': '“Ang mental health care magsugod sa <span class="accent">pagpaminaw.</span>”',
-         'hospital_name': 'Medina General Hospital',
-         'opd_door': 'OPD Door 2',
-         'footer_days': 'Martes, Huwebes ug Sabado',
-         'footer_time': '9:00 AM – 4:00 PM',
-         'urgency_normal': 'Normal',
-         'urgency_soon': 'Kinahanglan og atensyon sa labing dali nga panahon',
-         'urgency_urgent': 'Urgent',
-         'photo_role': 'Licensed Physician • Psychiatrist',
-         'flash_complete': 'Palihog kompletoha ang imong ngalan, contact information, ug assistance request.',
-         'flash_sent': 'Naipadala na ang imong assistance request sa clinic team.'}}
-
+TRANSLATIONS = {
+    "en": {
+        "nav_home":"Home", "nav_about":"About", "nav_services":"Services", "nav_clinic":"Clinic", "nav_help":"Assistance", "nav_staff":"Staff",
+        "tag":"Licensed Physician & Psychiatrist", "hero_title":"Your mind deserves <span>care.</span>",
+        "hero_text":"Compassionate, patient-centered psychiatric care focused on helping you understand your mental well-being and move toward a healthier, more fulfilling life.",
+        "help":"I Need Assistance", "meet":"Meet Dr. Tagupa →", "licensed":"Licensed Physician", "licensed_text":"A medical doctor committed to compassionate, patient-centered care.",
+        "psychiatry":"Psychiatry", "psychiatry_text":"Psychiatric evaluation and treatment for a wide range of mental health concerns.",
+        "centered":"Patient-Centered", "centered_text":"Your story, concerns, and well-being are at the heart of every consultation.",
+        "about_kicker":"About the Doctor", "about_title":"Compassion backed by training.", "about_intro":"Professional medical and psychiatric training with a patient-centered approach.",
+        "about_head":"Meet Dr. Tagupa", "about1":"Dr. Bebie Queen Lucelle R. Tagupa is a licensed physician and psychiatrist dedicated to providing compassionate, patient-centered mental health care.",
+        "about2":"She earned her Bachelor’s degree in Medical Technology from Velez College and is also a licensed Medical Technologist.",
+        "about3":"She proceeded to study Medicine at Xavier University – Ateneo de Cagayan.",
+        "about4":"She completed her post-graduate internship at Davao Doctors Hospital and finished her residency training in Psychiatry at the Southern Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.",
+        "about5":"During her final year of training, she served as Chief Resident and was awarded Most Outstanding Resident in Psychiatry during her graduation.",
+        "services_kicker":"Mental Health Care", "services_title":"Care that starts with you.", "services_intro":"Support for understanding your mental well-being and moving forward.",
+        "eval":"Psychiatric Evaluation", "eval_text":"Comprehensive assessment to better understand mental health concerns.",
+        "consult":"Mental Health Consultation", "consult_text":"A respectful space to discuss concerns, emotions, thoughts, and behavior.",
+        "treatment":"Treatment & Follow-Up", "treatment_text":"Patient-centered treatment and follow-up based on individual needs.",
+        "clinic_kicker":"Clinic Information", "clinic_title":"Visit the clinic.", "clinic_intro":"Find the location and consultation schedule below.",
+        "hospital":"Hospital", "location":"Location", "days":"Days", "time":"Time", "days_value":"Tuesday • Thursday • Saturday", "time_value":"9:00 AM – 4:00 PM",
+        "help_kicker":"Patient Assistance", "help_title":"Need a little help?", "help_text":"Tell the clinic what you need. Your request will appear on the protected staff dashboard so the clinic team can follow up.",
+        "name":"Name", "contact":"Contact", "urgency":"How urgent is this?", "language":"Preferred language", "concern":"How can we help?", "send":"Send Assistance Request →",
+        "placeholder_name":"Your name", "placeholder_contact":"Phone or email", "placeholder_concern":"Tell the clinic what you need assistance with...",
+        "warning":"Please do not use this form for emergencies. For an immediate medical or safety emergency, contact your local emergency services.",
+        "resources_kicker":"Wellness Resources", "resources_title":"Small steps can help.", "resources_intro":"A self-care card is available here as an educational wellness resource. It is not a substitute for professional care.",
+        "open_pdf":"Open Self-Care Card (PDF) →", "resource_alt":"Self-care wellness resource", "footer":"© 2026 Medina General Hospital. All rights reserved. • Licensed Physician • Psychiatrist",
+    },
+    "fil": {
+        "nav_home":"Home", "nav_about":"Tungkol sa Doktor", "nav_services":"Serbisyo", "nav_clinic":"Klinika", "nav_help":"Tulong", "nav_staff":"Staff",
+        "tag":"Licensed Physician at Psychiatrist", "hero_title":"Ang iyong isip ay karapat-dapat sa <span>pag-aalaga.</span>",
+        "hero_text":"Maalaga at patient-centered na psychiatric care upang matulungan kang maunawaan ang iyong mental well-being at mapabuti ang kalidad ng iyong buhay.",
+        "help":"Kailangan Ko ng Tulong", "meet":"Kilalanin si Dr. Tagupa →", "licensed":"Licensed Physician", "licensed_text":"Doktor na nakatuon sa mahabagin at patient-centered na pangangalaga.",
+        "psychiatry":"Psychiatry", "psychiatry_text":"Psychiatric evaluation at treatment para sa iba’t ibang mental health concerns.", "centered":"Patient-Centered", "centered_text":"Mahalaga ang iyong kuwento, mga alalahanin, at kapakanan sa bawat konsultasyon.",
+        "about_kicker":"Tungkol sa Doktor", "about_title":"Mahusay na training, may malasakit.", "about_intro":"Propesyonal na medical at psychiatric training na may patient-centered na approach.", "about_head":"Kilalanin si Dr. Tagupa",
+        "about1":"Si Dr. Bebie Queen Lucelle R. Tagupa ay isang licensed physician at psychiatrist na nakatuon sa mahabagin at patient-centered na mental health care.",
+        "about2":"Natapos niya ang Bachelor’s degree sa Medical Technology sa Velez College at isa rin siyang licensed Medical Technologist.", "about3":"Nagpatuloy siya sa Medicine sa Xavier University – Ateneo de Cagayan.",
+        "about4":"Nakumpleto niya ang post-graduate internship sa Davao Doctors Hospital at residency training sa Psychiatry sa Southern Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.",
+        "about5":"Sa kanyang huling taon ng training, nagsilbi siya bilang Chief Resident at ginawaran bilang Most Outstanding Resident in Psychiatry.",
+        "services_kicker":"Mental Health Care", "services_title":"Nagsisimula ang pag-aalaga sa iyo.", "services_intro":"Suporta para mas maunawaan ang iyong mental well-being at makapagpatuloy.",
+        "eval":"Psychiatric Evaluation", "eval_text":"Masusing assessment upang mas maunawaan ang iyong mental health concerns.", "consult":"Mental Health Consultation", "consult_text":"Ligtas at magalang na lugar para pag-usapan ang iyong concerns, emosyon, isip, at behavior.", "treatment":"Treatment & Follow-Up", "treatment_text":"Patient-centered treatment at follow-up ayon sa iyong pangangailangan.",
+        "clinic_kicker":"Impormasyon ng Klinika", "clinic_title":"Bumisita sa klinika.", "clinic_intro":"Narito ang lokasyon at schedule ng consultation.", "hospital":"Ospital", "location":"Lokasyon", "days":"Mga Araw", "time":"Oras", "days_value":"Martes • Huwebes • Sabado", "time_value":"9:00 AM – 4:00 PM",
+        "help_kicker":"Tulong para sa Pasyente", "help_title":"Kailangan mo ba ng kaunting tulong?", "help_text":"Sabihin sa clinic kung ano ang kailangan mo. Makikita ito ng authorized staff sa protected dashboard para ma-follow up ka.", "name":"Pangalan", "contact":"Contact", "urgency":"Gaano ito ka-urgent?", "language":"Mas gustong wika", "concern":"Paano ka namin matutulungan?", "send":"Ipadala ang Request →", "placeholder_name":"Iyong pangalan", "placeholder_contact":"Telepono o email", "placeholder_concern":"Sabihin kung anong tulong ang kailangan mo...", "warning":"Huwag gamitin ang form na ito para sa emergency. Para sa agarang medical o safety emergency, tumawag sa local emergency services.",
+        "resources_kicker":"Wellness Resources", "resources_title":"Maliit na hakbang, malaking tulong.", "resources_intro":"May self-care card dito bilang educational wellness resource. Hindi ito kapalit ng professional care.", "open_pdf":"Buksan ang Self-Care Card (PDF) →", "resource_alt":"Self-care wellness resource", "footer":"© 2026 Medina General Hospital. Nakalaan ang lahat ng karapatan. • Licensed Physician • Psychiatrist",
+    },
+    "ceb": {
+        "nav_home":"Home", "nav_about":"Mahitungod", "nav_services":"Serbisyo", "nav_clinic":"Clinic", "nav_help":"Tabang", "nav_staff":"Staff",
+        "tag":"Licensed Physician ug Psychiatrist", "hero_title":"Ang imong hunahuna angay sa <span>pag-atiman.</span>",
+        "hero_text":"Mainiton ug patient-centered nga psychiatric care aron matabangan ka nga masabtan ang imong mental well-being ug mapauswag ang kalidad sa imong kinabuhi.",
+        "help":"Nanginahanglan Ko og Tabang", "meet":"Ilaila si Dr. Tagupa →", "licensed":"Licensed Physician", "licensed_text":"Doktor nga naghatag og maloloy-on ug patient-centered nga pag-atiman.", "psychiatry":"Psychiatry", "psychiatry_text":"Psychiatric evaluation ug treatment para sa lain-laing mental health concerns.", "centered":"Patient-Centered", "centered_text":"Importante ang imong istorya, kabalaka, ug kaayohan sa matag consultation.",
+        "about_kicker":"Mahitungod sa Doktor", "about_title":"Maayong training, adunay malasakit.", "about_intro":"Propesyonal nga medical ug psychiatric training nga patient-centered ang approach.", "about_head":"Ilaila si Dr. Tagupa", "about1":"Si Dr. Bebie Queen Lucelle R. Tagupa usa ka licensed physician ug psychiatrist nga naghatag og maloloy-on ug patient-centered nga mental health care.", "about2":"Nakakuha siya sa Bachelor’s degree sa Medical Technology gikan sa Velez College ug usa usab siya ka licensed Medical Technologist.", "about3":"Nagpadayon siya sa Medicine sa Xavier University – Ateneo de Cagayan.", "about4":"Nakompleto niya ang post-graduate internship sa Davao Doctors Hospital ug residency training sa Psychiatry sa Southern Philippines Medical Center – Institute of Psychiatry and Behavioral Medicine.", "about5":"Sa iyang katapusang tuig sa training, nagsilbi siya isip Chief Resident ug nadawat ang award nga Most Outstanding Resident in Psychiatry.",
+        "services_kicker":"Mental Health Care", "services_title":"Ikaw ang sinugdanan sa pag-atiman.", "services_intro":"Suporta aron masabtan ang imong mental well-being ug makapadayon.", "eval":"Psychiatric Evaluation", "eval_text":"Masusing assessment aron masabtan ang mental health concerns.", "consult":"Mental Health Consultation", "consult_text":"Marespeto nga lugar sa paghisgot sa concerns, emosyon, hunahuna, ug behavior.", "treatment":"Treatment & Follow-Up", "treatment_text":"Patient-centered treatment ug follow-up base sa imong panginahanglan.",
+        "clinic_kicker":"Impormasyon sa Clinic", "clinic_title":"Bisitaha ang clinic.", "clinic_intro":"Ani-a ang lokasyon ug consultation schedule.", "hospital":"Ospital", "location":"Lokasyon", "days":"Mga Adlaw", "time":"Oras", "days_value":"Martes • Huwebes • Sabado", "time_value":"9:00 AM – 4:00 PM",
+        "help_kicker":"Tabang para sa Pasyente", "help_title":"Nanginahanglan og gamay nga tabang?", "help_text":"Sultihi ang clinic kung unsa imong gikinahanglan. Makita kini sa authorized staff sa protected dashboard aron ma-follow up ka.", "name":"Ngalan", "contact":"Contact", "urgency":"Unsa ka-urgent?", "language":"Piniling pinulongan", "concern":"Unsaon namo pagtabang?", "send":"Ipadala ang Request →", "placeholder_name":"Imong ngalan", "placeholder_contact":"Telepono o email", "placeholder_concern":"Isulti kung unsa nga tabang imong gikinahanglan...", "warning":"Ayaw gamita kini nga form para sa emergency. Para sa dali nga medical o safety emergency, kontaka ang local emergency services.",
+        "resources_kicker":"Wellness Resources", "resources_title":"Gamay nga mga lakang makatabang.", "resources_intro":"Adunay self-care card dinhi isip educational wellness resource. Dili kini kapuli sa professional care.", "open_pdf":"Ablihi ang Self-Care Card (PDF) →", "resource_alt":"Self-care wellness resource", "footer":"© 2026 Medina General Hospital. Tanang katungod gitagana. • Licensed Physician • Psychiatrist",
+    },
+}
 
 
 TEMPLATE = """
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ title }} | Dr. Bebie Tagupa</title>
@@ -347,7 +159,7 @@ main{padding-top:72px}section{padding:82px 0}.hero{padding:100px 0 75px}.hero-gr
 .photo-card{width:min(390px,100%);margin:auto;padding:10px;border-radius:28px;background:linear-gradient(145deg,var(--card),var(--alt));border:1px solid var(--line);box-shadow:0 25px 60px rgba(74,38,110,.13)}.doctor-photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;background:var(--alt)}.photo-caption{padding:13px 7px 4px;font-weight:900}.photo-caption small{display:block;color:var(--muted);font-weight:600}
 .cards,.services,.clinic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cards{margin-top:10px}.card,.service,.clinic,.request,.login{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 14px 40px rgba(74,38,110,.07)}.icon{font-size:26px;margin-bottom:7px}.card h3,.service h3{margin:0 0 5px;font-size:17px}.card p,.service p,.clinic p{margin:0;color:var(--muted);font-size:13px}.alt{background:var(--alt)}.heading{max-width:760px;margin:0 auto 38px}.heading h2{font-size:clamp(31px,5vw,48px);line-height:1.1;letter-spacing:-1.7px;margin:7px 0 10px}.heading p{color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:center}.quote{font-size:28px;line-height:1.25;font-weight:900;padding:35px;background:var(--card);border:1px solid var(--line);border-radius:24px}.about p{color:var(--muted);margin:0 auto 13px;max-width:680px}.service{text-align:center}.service .icon{width:52px;height:52px;display:grid;place-items:center;margin:0 auto 13px;background:var(--alt);border-radius:14px}.clinic-grid{grid-template-columns:1fr 1fr}.clinic{padding:28px}.row{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;justify-content:center}.row:last-child{border-bottom:0}.row b{display:block;font-size:12px;color:var(--p)}.row span{color:var(--muted);font-size:13px}
 .help{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:white;border-radius:28px;padding:42px}.help .kicker{color:#e7dbff}.help p{color:rgba(255,255,255,.82)}form{margin:22px auto 0;max-width:820px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{text-align:left}.field.full{grid-column:1/-1}.field label{display:block;font-size:12px;font-weight:900;margin:0 0 5px}.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.22);border-radius:11px;background:rgba(255,255,255,.12);color:white;padding:12px;outline:0}.field option{color:#21152d}.field textarea{min-height:105px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.65)}.form-actions{margin-top:12px}.light-btn{background:white;color:#5b21b6;border:0}.small{font-size:11px;color:rgba(255,255,255,.7);margin-top:9px}
-.resource img{width:min(440px,100%);border-radius:18px;border:1px solid var(--line);display:block;margin:0 auto 18px}.flash{margin:14px auto 0;padding:12px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);width:min(900px,92%)}.success{border-color:#86efac}.danger{border-color:#fca5a5}footer{padding:30px 0;background:var(--alt);border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.resource img{width:min(440px,100%);border-radius:18px;border:1px solid var(--line);display:block;margin:0 auto 18px}.flash{margin:14px auto 0;padding:12px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);width:min(900px,92%)}.success{border-color:#86efac}.danger{border-color:#fca5a5}footer{margin-top:40px;padding:34px 18px;background:var(--alt);border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.8;text-align:center}footer .copyright{font-weight:800;color:var(--text);font-size:13px}footer .sub{display:block;margin-top:4px}
 .staff-head{padding:75px 0 20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat strong{display:block;font-size:37px;color:var(--p)}.request{text-align:center}.request.new{border:2px solid rgba(124,58,237,.35)}.request-top{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.request-name{font-size:18px;font-weight:900}.muted{color:var(--muted);font-size:12px}.badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:8px}.badge{background:var(--alt);color:var(--p);border-radius:999px;padding:4px 9px;font-size:10px;font-weight:900}.urgent{background:#fee2e2;color:#991b1b}.request-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.request-field{padding:12px;border-radius:12px;background:var(--alt)}.request-field b{display:block;color:var(--p);font-size:10px;text-transform:uppercase}.request-field span{font-size:12px}.note{text-align:left}.note textarea{width:100%;min-height:80px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--card);color:var(--text)}.login{max-width:470px;margin:70px auto}.login input{width:100%;padding:12px;margin:6px 0 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text)}
 @media(max-width:850px){.hero-grid,.about-grid,.clinic-grid{grid-template-columns:1fr}.photo-area{order:-1}.cards,.services,.stats{grid-template-columns:1fr}.request-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.nav{display:none}}
 </style></head>
@@ -355,19 +167,19 @@ main{padding-top:72px}section{padding:82px 0}.hero{padding:100px 0 75px}.hero-gr
 <header><nav class="wrap"><a class="brand" href="{{ url_for('home') }}">💜 Dr. Bebie Tagupa</a><div class="nav"><a href="#home">{{t.nav_home}}</a><a href="#about">{{t.nav_about}}</a><a href="#services">{{t.nav_services}}</a><a href="#clinic">{{t.nav_clinic}}</a><a href="#assistance">{{t.nav_help}}</a><a href="{{url_for('staff_login')}}">{{t.nav_staff}}</a></div><div class="tools"><select id="language" onchange="setLanguage()"><option value="en">English</option><option value="fil">Filipino</option><option value="ceb">Visaya</option></select><button onclick="toggleTheme()" id="theme">🌙</button></div></nav></header>
 {% with messages=get_flashed_messages(with_categories=true) %}{% for category,message in messages %}<div class="flash {{category}}">{{message}}</div>{% endfor %}{% endwith %}
 <main class="wrap">
-<section class="hero" id="home"><div class="hero-grid"><div><div class="pill">{{t.tag}}</div><h1>{{t.hero_title|safe}}</h1><p class="lead">{{t.hero_text}}</p><div class="buttons"><a class="btn primary" href="#assistance">💜 {{t.help}}</a><a class="btn secondary" href="#about">{{t.meet}}</a></div></div><div class="photo-area"><div class="photo-card"><img class="doctor-photo" src="{{ url_for('static', filename='image0 (2).jpeg') }}" alt="Dr. Bebie Queen Lucelle R. Tagupa" onerror="this.src='{{ url_for('static', filename='doctor-placeholder.svg') }}'"><div class="photo-caption">Dr. Bebie Queen Lucelle R. Tagupa<small>{{t.photo_role}}</small></div></div></div></div></section>
+<section class="hero" id="home"><div class="hero-grid"><div><div class="pill">{{t.tag}}</div><h1>{{t.hero_title|safe}}</h1><p class="lead">{{t.hero_text}}</p><div class="buttons"><a class="btn primary" href="#assistance">💜 {{t.help}}</a><a class="btn secondary" href="#about">{{t.meet}}</a></div></div><div class="photo-area"><div class="photo-card"><img class="doctor-photo" src="{{ url_for('static', filename='image0 (2).jpeg') }}" alt="Dr. Bebie Queen Lucelle R. Tagupa" onerror="this.src='{{ url_for('static', filename='doctor-placeholder.svg') }}'"><div class="photo-caption">Dr. Bebie Queen Lucelle R. Tagupa<small>Licensed Physician • Psychiatrist</small></div></div></div></div></section>
 <section><div class="cards"><div class="card"><div class="icon">🩺</div><h3>{{t.licensed}}</h3><p>{{t.licensed_text}}</p></div><div class="card"><div class="icon">🧠</div><h3>{{t.psychiatry}}</h3><p>{{t.psychiatry_text}}</p></div><div class="card"><div class="icon">💜</div><h3>{{t.centered}}</h3><p>{{t.centered_text}}</p></div></div></section>
-<section class="alt" id="about"><div class="heading"><div class="kicker">{{t.about_kicker}}</div><h2>{{t.about_title}}</h2><p>{{t.about_intro}}</p></div><div class="about-grid"><div class="quote">{{t.quote|safe}}</div><div class="about"><h2>{{t.about_head}}</h2><p>{{t.about1}}</p><p>{{t.about2}}</p><p>{{t.about3}}</p><p>{{t.about4}}</p><p>{{t.about5}}</p></div></div></section>
+<section class="alt" id="about"><div class="heading"><div class="kicker">{{t.about_kicker}}</div><h2>{{t.about_title}}</h2><p>{{t.about_intro}}</p></div><div class="about-grid"><div class="quote">“Mental health care begins with <span class="accent">being heard.</span>”</div><div class="about"><h2>{{t.about_head}}</h2><p>{{t.about1}}</p><p>{{t.about2}}</p><p>{{t.about3}}</p><p>{{t.about4}}</p><p>{{t.about5}}</p></div></div></section>
 <section id="services"><div class="heading"><div class="kicker">{{t.services_kicker}}</div><h2>{{t.services_title}}</h2><p>{{t.services_intro}}</p></div><div class="services"><div class="service"><div class="icon">🧠</div><h3>{{t.eval}}</h3><p>{{t.eval_text}}</p></div><div class="service"><div class="icon">💬</div><h3>{{t.consult}}</h3><p>{{t.consult_text}}</p></div><div class="service"><div class="icon">🌱</div><h3>{{t.treatment}}</h3><p>{{t.treatment_text}}</p></div></div></section>
-<section class="alt" id="clinic"><div class="heading"><div class="kicker">{{t.clinic_kicker}}</div><h2>{{t.clinic_title}}</h2><p>{{t.clinic_intro}}</p></div><div class="clinic-grid"><div class="clinic"><h3>🏥 {{t.hospital}}</h3><div class="row"><span>🏥</span><div><b>{{t.hospital}}</b><span>{{t.hospital_name}}</span></div></div><div class="row"><span>🚪</span><div><b>{{t.location}}</b><span>{{t.opd_door}}</span></div></div></div><div class="clinic"><h3>🕘 {{t.time}}</h3><div class="row"><span>📅</span><div><b>{{t.days}}</b><span>{{t.days_value}}</span></div></div><div class="row"><span>⏰</span><div><b>{{t.time}}</b><span>{{t.time_value}}</span></div></div></div></div></section>
-<section id="assistance"><div class="help"><div class="kicker">{{t.help_kicker}}</div><h2>{{t.help_title}}</h2><p>{{t.help_text}}</p><form method="post" action="{{url_for('request_assistance')}}"><div class="form-grid"><div class="field"><label>{{t.name}}</label><input name="patient_name" required maxlength="120" placeholder="{{t.placeholder_name}}"></div><div class="field"><label>{{t.contact}}</label><input name="contact" required maxlength="160" placeholder="{{t.placeholder_contact}}"></div><div class="field"><label>{{t.urgency}}</label><select name="urgency"><option value="Normal">{{t.urgency_normal}}</option><option value="Needs attention soon">{{t.urgency_soon}}</option><option value="Urgent">{{t.urgency_urgent}}</option></select></div><div class="field"><label>{{t.language}}</label><select name="preferred_language"><option value="English">English</option><option value="Filipino">Filipino</option><option value="Visaya">Visaya</option></select></div><div class="field full"><label>{{t.concern}}</label><textarea name="concern" required maxlength="2000" placeholder="{{t.placeholder_concern}}"></textarea></div></div><div class="form-actions"><button class="btn light-btn" type="submit">{{t.send}}</button></div><div class="small">{{t.warning}}</div></form></div></section>
+<section class="alt" id="clinic"><div class="heading"><div class="kicker">{{t.clinic_kicker}}</div><h2>{{t.clinic_title}}</h2><p>{{t.clinic_intro}}</p></div><div class="clinic-grid"><div class="clinic"><h3>🏥 {{t.hospital}}</h3><div class="row"><span>🏥</span><div><b>{{t.hospital}}</b><span>Medina General Hospital</span></div></div><div class="row"><span>🚪</span><div><b>{{t.location}}</b><span>OPD Door 2</span></div></div></div><div class="clinic"><h3>🕘 {{t.time}}</h3><div class="row"><span>📅</span><div><b>{{t.days}}</b><span>{{t.days_value}}</span></div></div><div class="row"><span>⏰</span><div><b>{{t.time}}</b><span>{{t.time_value}}</span></div></div></div></div></section>
+<section id="assistance"><div class="help"><div class="kicker">{{t.help_kicker}}</div><h2>{{t.help_title}}</h2><p>{{t.help_text}}</p><form method="post" action="{{url_for('request_assistance')}}"><div class="form-grid"><div class="field"><label>{{t.name}}</label><input name="patient_name" required maxlength="120" placeholder="{{t.placeholder_name}}"></div><div class="field"><label>{{t.contact}}</label><input name="contact" required maxlength="160" placeholder="{{t.placeholder_contact}}"></div><div class="field"><label>{{t.urgency}}</label><select name="urgency"><option>Normal</option><option>Needs attention soon</option><option>Urgent</option></select></div><div class="field"><label>{{t.language}}</label><select name="preferred_language"><option>English</option><option>Filipino</option><option>Visaya</option></select></div><div class="field full"><label>{{t.concern}}</label><textarea name="concern" required maxlength="2000" placeholder="{{t.placeholder_concern}}"></textarea></div></div><div class="form-actions"><button class="btn light-btn" type="submit">{{t.send}}</button></div><div class="small">{{t.warning}}</div></form></div></section>
 <section><div class="heading"><div class="kicker">{{t.resources_kicker}}</div><h2>{{t.resources_title}}</h2><p>{{t.resources_intro}}</p></div><div class="resource card"><img src="{{url_for('static',filename='self-care-contact.png')}}" alt="{{t.resource_alt}}"><div class="buttons"><a class="btn primary" href="{{url_for('self_care_pdf')}}" target="_blank">{{t.open_pdf}}</a></div></div></section>
-</main><footer>{{t.footer}} • {{t.hospital_name}} {{t.opd_door}} • {{t.footer_days}} • {{t.footer_time}}</footer>
+</main><footer><div class="copyright">{{t.footer}}</div><span class="sub">Medina General Hospital • OPD Door 2 • {{t.days_value}} • {{t.time_value}}</span></footer>
 <script>
 function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()}
 function syncTheme(){document.getElementById('theme').textContent=document.body.classList.contains('dark')?'☀️':'🌙'}
-function setLanguage(){const lang=document.getElementById('language').value;localStorage.setItem('language',lang);document.cookie='site_language='+encodeURIComponent(lang)+'; path=/; max-age=31536000; SameSite=Lax';const u=new URL(window.location.href);u.searchParams.set('lang',lang);window.location.href=u.toString()}
-(function(){let th=localStorage.getItem('theme');if(th==='dark')document.body.classList.add('dark');syncTheme();const m=document.cookie.match(/(?:^|; )site_language=([^;]+)/);const lang=m?decodeURIComponent(m[1]):(localStorage.getItem('language')||'en');document.getElementById('language').value=['en','fil','ceb'].includes(lang)?lang:'en'})();
+function setLanguage(){localStorage.setItem('language',document.getElementById('language').value);location.reload()}
+(function(){let th=localStorage.getItem('theme');if(th==='dark')document.body.classList.add('dark');syncTheme();document.getElementById('language').value=localStorage.getItem('language')||'en'})();
 </script></body></html>
 """
 
@@ -381,19 +193,14 @@ STAFF_TEMPLATE = """
 
 
 def render_page(title, lang="en"):
-    if lang not in TRANSLATIONS:
-        lang = "en"
-    return render_template_string(TEMPLATE, title=title, lang=lang, t=TRANSLATIONS[lang])
-
-
-def current_language():
-    lang = request.args.get("lang") or request.cookies.get("site_language") or "en"
-    return lang if lang in TRANSLATIONS else "en"
+    return render_template_string(TEMPLATE, title=title, t=TRANSLATIONS.get(lang, TRANSLATIONS["en"]))
 
 
 @app.route("/")
 def home():
-    lang = current_language()
+    lang = request.args.get("lang", "en")
+    if lang not in TRANSLATIONS:
+        lang = "en"
     return render_page("Home", lang)
 
 
@@ -409,13 +216,13 @@ def request_assistance():
     if language not in {"English", "Filipino", "Visaya"}:
         language = "English"
     if not name or not contact or not concern:
-        flash(TRANSLATIONS[current_language()]["flash_complete"], "danger")
+        flash("Please complete your name, contact information, and assistance request.", "danger")
         return redirect(url_for("home", _anchor="assistance"))
     stamp = now()
     conn = db()
     conn.execute("""INSERT INTO assistance_requests(patient_name,contact,concern,urgency,preferred_language,status,created_at,updated_at) VALUES(?,?,?,?,?,'New',?,?)""", (name, contact, concern, urgency, language, stamp, stamp))
     conn.commit(); conn.close()
-    flash(TRANSLATIONS[current_language()]["flash_sent"], "success")
+    flash("Your assistance request has been sent to the clinic team.", "success")
     return redirect(url_for("home", _anchor="assistance"))
 
 
@@ -515,1833 +322,1879 @@ init_db()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "5000")), debug=False)
-# MEDINA GENERAL HOSPITAL — APPLICATION NOTES
-# ------------------------------------------------------------------------
-# Medina General Hospital — Application Notes item 1: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 2: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 3: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 4: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 5: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 6: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 7: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 8: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 9: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 10: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 11: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 12: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 13: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 14: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 15: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 16: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 17: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 18: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 19: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 20: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 21: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 22: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 23: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 24: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 25: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 26: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 27: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 28: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 29: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 30: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 31: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 32: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 33: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 34: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 35: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 36: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 37: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 38: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 39: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 40: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 41: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 42: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 43: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 44: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 45: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 46: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 47: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 48: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 49: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 50: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 51: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 52: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 53: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 54: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 55: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 56: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 57: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 58: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 59: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 60: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 61: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 62: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 63: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 64: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 65: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 66: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 67: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 68: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 69: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 70: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 71: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 72: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 73: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 74: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 75: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 76: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 77: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 78: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 79: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 80: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 81: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 82: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 83: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 84: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 85: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 86: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 87: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 88: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 89: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 90: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 91: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 92: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 93: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 94: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 95: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 96: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 97: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 98: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 99: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 100: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 101: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 102: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 103: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 104: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 105: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 106: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 107: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 108: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 109: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 110: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 111: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 112: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 113: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 114: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 115: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 116: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 117: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 118: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 119: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 120: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 121: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 122: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 123: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 124: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 125: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 126: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 127: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 128: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 129: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 130: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 131: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 132: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 133: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 134: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 135: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 136: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 137: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 138: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 139: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 140: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 141: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 142: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 143: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 144: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 145: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 146: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 147: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 148: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 149: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 150: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 151: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 152: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 153: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 154: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 155: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 156: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 157: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 158: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 159: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 160: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 161: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 162: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 163: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 164: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 165: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 166: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 167: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 168: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 169: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 170: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 171: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 172: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 173: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 174: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 175: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 176: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 177: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 178: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 179: Keep this section documented and easy to maintain.
-# Medina General Hospital — Application Notes item 180: Keep this section documented and easy to maintain.
-#
-# ACCESSIBILITY NOTES
-# ------------------------------------------------------------------------
-# Accessibility Notes item 1: Keep this section documented and easy to maintain.
-# Accessibility Notes item 2: Keep this section documented and easy to maintain.
-# Accessibility Notes item 3: Keep this section documented and easy to maintain.
-# Accessibility Notes item 4: Keep this section documented and easy to maintain.
-# Accessibility Notes item 5: Keep this section documented and easy to maintain.
-# Accessibility Notes item 6: Keep this section documented and easy to maintain.
-# Accessibility Notes item 7: Keep this section documented and easy to maintain.
-# Accessibility Notes item 8: Keep this section documented and easy to maintain.
-# Accessibility Notes item 9: Keep this section documented and easy to maintain.
-# Accessibility Notes item 10: Keep this section documented and easy to maintain.
-# Accessibility Notes item 11: Keep this section documented and easy to maintain.
-# Accessibility Notes item 12: Keep this section documented and easy to maintain.
-# Accessibility Notes item 13: Keep this section documented and easy to maintain.
-# Accessibility Notes item 14: Keep this section documented and easy to maintain.
-# Accessibility Notes item 15: Keep this section documented and easy to maintain.
-# Accessibility Notes item 16: Keep this section documented and easy to maintain.
-# Accessibility Notes item 17: Keep this section documented and easy to maintain.
-# Accessibility Notes item 18: Keep this section documented and easy to maintain.
-# Accessibility Notes item 19: Keep this section documented and easy to maintain.
-# Accessibility Notes item 20: Keep this section documented and easy to maintain.
-# Accessibility Notes item 21: Keep this section documented and easy to maintain.
-# Accessibility Notes item 22: Keep this section documented and easy to maintain.
-# Accessibility Notes item 23: Keep this section documented and easy to maintain.
-# Accessibility Notes item 24: Keep this section documented and easy to maintain.
-# Accessibility Notes item 25: Keep this section documented and easy to maintain.
-# Accessibility Notes item 26: Keep this section documented and easy to maintain.
-# Accessibility Notes item 27: Keep this section documented and easy to maintain.
-# Accessibility Notes item 28: Keep this section documented and easy to maintain.
-# Accessibility Notes item 29: Keep this section documented and easy to maintain.
-# Accessibility Notes item 30: Keep this section documented and easy to maintain.
-# Accessibility Notes item 31: Keep this section documented and easy to maintain.
-# Accessibility Notes item 32: Keep this section documented and easy to maintain.
-# Accessibility Notes item 33: Keep this section documented and easy to maintain.
-# Accessibility Notes item 34: Keep this section documented and easy to maintain.
-# Accessibility Notes item 35: Keep this section documented and easy to maintain.
-# Accessibility Notes item 36: Keep this section documented and easy to maintain.
-# Accessibility Notes item 37: Keep this section documented and easy to maintain.
-# Accessibility Notes item 38: Keep this section documented and easy to maintain.
-# Accessibility Notes item 39: Keep this section documented and easy to maintain.
-# Accessibility Notes item 40: Keep this section documented and easy to maintain.
-# Accessibility Notes item 41: Keep this section documented and easy to maintain.
-# Accessibility Notes item 42: Keep this section documented and easy to maintain.
-# Accessibility Notes item 43: Keep this section documented and easy to maintain.
-# Accessibility Notes item 44: Keep this section documented and easy to maintain.
-# Accessibility Notes item 45: Keep this section documented and easy to maintain.
-# Accessibility Notes item 46: Keep this section documented and easy to maintain.
-# Accessibility Notes item 47: Keep this section documented and easy to maintain.
-# Accessibility Notes item 48: Keep this section documented and easy to maintain.
-# Accessibility Notes item 49: Keep this section documented and easy to maintain.
-# Accessibility Notes item 50: Keep this section documented and easy to maintain.
-# Accessibility Notes item 51: Keep this section documented and easy to maintain.
-# Accessibility Notes item 52: Keep this section documented and easy to maintain.
-# Accessibility Notes item 53: Keep this section documented and easy to maintain.
-# Accessibility Notes item 54: Keep this section documented and easy to maintain.
-# Accessibility Notes item 55: Keep this section documented and easy to maintain.
-# Accessibility Notes item 56: Keep this section documented and easy to maintain.
-# Accessibility Notes item 57: Keep this section documented and easy to maintain.
-# Accessibility Notes item 58: Keep this section documented and easy to maintain.
-# Accessibility Notes item 59: Keep this section documented and easy to maintain.
-# Accessibility Notes item 60: Keep this section documented and easy to maintain.
-# Accessibility Notes item 61: Keep this section documented and easy to maintain.
-# Accessibility Notes item 62: Keep this section documented and easy to maintain.
-# Accessibility Notes item 63: Keep this section documented and easy to maintain.
-# Accessibility Notes item 64: Keep this section documented and easy to maintain.
-# Accessibility Notes item 65: Keep this section documented and easy to maintain.
-# Accessibility Notes item 66: Keep this section documented and easy to maintain.
-# Accessibility Notes item 67: Keep this section documented and easy to maintain.
-# Accessibility Notes item 68: Keep this section documented and easy to maintain.
-# Accessibility Notes item 69: Keep this section documented and easy to maintain.
-# Accessibility Notes item 70: Keep this section documented and easy to maintain.
-# Accessibility Notes item 71: Keep this section documented and easy to maintain.
-# Accessibility Notes item 72: Keep this section documented and easy to maintain.
-# Accessibility Notes item 73: Keep this section documented and easy to maintain.
-# Accessibility Notes item 74: Keep this section documented and easy to maintain.
-# Accessibility Notes item 75: Keep this section documented and easy to maintain.
-# Accessibility Notes item 76: Keep this section documented and easy to maintain.
-# Accessibility Notes item 77: Keep this section documented and easy to maintain.
-# Accessibility Notes item 78: Keep this section documented and easy to maintain.
-# Accessibility Notes item 79: Keep this section documented and easy to maintain.
-# Accessibility Notes item 80: Keep this section documented and easy to maintain.
-# Accessibility Notes item 81: Keep this section documented and easy to maintain.
-# Accessibility Notes item 82: Keep this section documented and easy to maintain.
-# Accessibility Notes item 83: Keep this section documented and easy to maintain.
-# Accessibility Notes item 84: Keep this section documented and easy to maintain.
-# Accessibility Notes item 85: Keep this section documented and easy to maintain.
-# Accessibility Notes item 86: Keep this section documented and easy to maintain.
-# Accessibility Notes item 87: Keep this section documented and easy to maintain.
-# Accessibility Notes item 88: Keep this section documented and easy to maintain.
-# Accessibility Notes item 89: Keep this section documented and easy to maintain.
-# Accessibility Notes item 90: Keep this section documented and easy to maintain.
-# Accessibility Notes item 91: Keep this section documented and easy to maintain.
-# Accessibility Notes item 92: Keep this section documented and easy to maintain.
-# Accessibility Notes item 93: Keep this section documented and easy to maintain.
-# Accessibility Notes item 94: Keep this section documented and easy to maintain.
-# Accessibility Notes item 95: Keep this section documented and easy to maintain.
-# Accessibility Notes item 96: Keep this section documented and easy to maintain.
-# Accessibility Notes item 97: Keep this section documented and easy to maintain.
-# Accessibility Notes item 98: Keep this section documented and easy to maintain.
-# Accessibility Notes item 99: Keep this section documented and easy to maintain.
-# Accessibility Notes item 100: Keep this section documented and easy to maintain.
-# Accessibility Notes item 101: Keep this section documented and easy to maintain.
-# Accessibility Notes item 102: Keep this section documented and easy to maintain.
-# Accessibility Notes item 103: Keep this section documented and easy to maintain.
-# Accessibility Notes item 104: Keep this section documented and easy to maintain.
-# Accessibility Notes item 105: Keep this section documented and easy to maintain.
-# Accessibility Notes item 106: Keep this section documented and easy to maintain.
-# Accessibility Notes item 107: Keep this section documented and easy to maintain.
-# Accessibility Notes item 108: Keep this section documented and easy to maintain.
-# Accessibility Notes item 109: Keep this section documented and easy to maintain.
-# Accessibility Notes item 110: Keep this section documented and easy to maintain.
-# Accessibility Notes item 111: Keep this section documented and easy to maintain.
-# Accessibility Notes item 112: Keep this section documented and easy to maintain.
-# Accessibility Notes item 113: Keep this section documented and easy to maintain.
-# Accessibility Notes item 114: Keep this section documented and easy to maintain.
-# Accessibility Notes item 115: Keep this section documented and easy to maintain.
-# Accessibility Notes item 116: Keep this section documented and easy to maintain.
-# Accessibility Notes item 117: Keep this section documented and easy to maintain.
-# Accessibility Notes item 118: Keep this section documented and easy to maintain.
-# Accessibility Notes item 119: Keep this section documented and easy to maintain.
-# Accessibility Notes item 120: Keep this section documented and easy to maintain.
-# Accessibility Notes item 121: Keep this section documented and easy to maintain.
-# Accessibility Notes item 122: Keep this section documented and easy to maintain.
-# Accessibility Notes item 123: Keep this section documented and easy to maintain.
-# Accessibility Notes item 124: Keep this section documented and easy to maintain.
-# Accessibility Notes item 125: Keep this section documented and easy to maintain.
-# Accessibility Notes item 126: Keep this section documented and easy to maintain.
-# Accessibility Notes item 127: Keep this section documented and easy to maintain.
-# Accessibility Notes item 128: Keep this section documented and easy to maintain.
-# Accessibility Notes item 129: Keep this section documented and easy to maintain.
-# Accessibility Notes item 130: Keep this section documented and easy to maintain.
-# Accessibility Notes item 131: Keep this section documented and easy to maintain.
-# Accessibility Notes item 132: Keep this section documented and easy to maintain.
-# Accessibility Notes item 133: Keep this section documented and easy to maintain.
-# Accessibility Notes item 134: Keep this section documented and easy to maintain.
-# Accessibility Notes item 135: Keep this section documented and easy to maintain.
-# Accessibility Notes item 136: Keep this section documented and easy to maintain.
-# Accessibility Notes item 137: Keep this section documented and easy to maintain.
-# Accessibility Notes item 138: Keep this section documented and easy to maintain.
-# Accessibility Notes item 139: Keep this section documented and easy to maintain.
-# Accessibility Notes item 140: Keep this section documented and easy to maintain.
-# Accessibility Notes item 141: Keep this section documented and easy to maintain.
-# Accessibility Notes item 142: Keep this section documented and easy to maintain.
-# Accessibility Notes item 143: Keep this section documented and easy to maintain.
-# Accessibility Notes item 144: Keep this section documented and easy to maintain.
-# Accessibility Notes item 145: Keep this section documented and easy to maintain.
-# Accessibility Notes item 146: Keep this section documented and easy to maintain.
-# Accessibility Notes item 147: Keep this section documented and easy to maintain.
-# Accessibility Notes item 148: Keep this section documented and easy to maintain.
-# Accessibility Notes item 149: Keep this section documented and easy to maintain.
-# Accessibility Notes item 150: Keep this section documented and easy to maintain.
-# Accessibility Notes item 151: Keep this section documented and easy to maintain.
-# Accessibility Notes item 152: Keep this section documented and easy to maintain.
-# Accessibility Notes item 153: Keep this section documented and easy to maintain.
-# Accessibility Notes item 154: Keep this section documented and easy to maintain.
-# Accessibility Notes item 155: Keep this section documented and easy to maintain.
-# Accessibility Notes item 156: Keep this section documented and easy to maintain.
-# Accessibility Notes item 157: Keep this section documented and easy to maintain.
-# Accessibility Notes item 158: Keep this section documented and easy to maintain.
-# Accessibility Notes item 159: Keep this section documented and easy to maintain.
-# Accessibility Notes item 160: Keep this section documented and easy to maintain.
-# Accessibility Notes item 161: Keep this section documented and easy to maintain.
-# Accessibility Notes item 162: Keep this section documented and easy to maintain.
-# Accessibility Notes item 163: Keep this section documented and easy to maintain.
-# Accessibility Notes item 164: Keep this section documented and easy to maintain.
-# Accessibility Notes item 165: Keep this section documented and easy to maintain.
-# Accessibility Notes item 166: Keep this section documented and easy to maintain.
-# Accessibility Notes item 167: Keep this section documented and easy to maintain.
-# Accessibility Notes item 168: Keep this section documented and easy to maintain.
-# Accessibility Notes item 169: Keep this section documented and easy to maintain.
-# Accessibility Notes item 170: Keep this section documented and easy to maintain.
-# Accessibility Notes item 171: Keep this section documented and easy to maintain.
-# Accessibility Notes item 172: Keep this section documented and easy to maintain.
-# Accessibility Notes item 173: Keep this section documented and easy to maintain.
-# Accessibility Notes item 174: Keep this section documented and easy to maintain.
-# Accessibility Notes item 175: Keep this section documented and easy to maintain.
-# Accessibility Notes item 176: Keep this section documented and easy to maintain.
-# Accessibility Notes item 177: Keep this section documented and easy to maintain.
-# Accessibility Notes item 178: Keep this section documented and easy to maintain.
-# Accessibility Notes item 179: Keep this section documented and easy to maintain.
-# Accessibility Notes item 180: Keep this section documented and easy to maintain.
-#
-# RESPONSIVE DESIGN NOTES
-# ------------------------------------------------------------------------
-# Responsive Design Notes item 1: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 2: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 3: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 4: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 5: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 6: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 7: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 8: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 9: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 10: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 11: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 12: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 13: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 14: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 15: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 16: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 17: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 18: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 19: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 20: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 21: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 22: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 23: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 24: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 25: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 26: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 27: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 28: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 29: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 30: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 31: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 32: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 33: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 34: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 35: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 36: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 37: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 38: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 39: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 40: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 41: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 42: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 43: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 44: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 45: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 46: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 47: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 48: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 49: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 50: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 51: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 52: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 53: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 54: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 55: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 56: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 57: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 58: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 59: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 60: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 61: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 62: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 63: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 64: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 65: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 66: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 67: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 68: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 69: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 70: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 71: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 72: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 73: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 74: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 75: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 76: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 77: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 78: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 79: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 80: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 81: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 82: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 83: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 84: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 85: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 86: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 87: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 88: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 89: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 90: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 91: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 92: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 93: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 94: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 95: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 96: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 97: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 98: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 99: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 100: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 101: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 102: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 103: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 104: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 105: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 106: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 107: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 108: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 109: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 110: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 111: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 112: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 113: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 114: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 115: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 116: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 117: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 118: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 119: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 120: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 121: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 122: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 123: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 124: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 125: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 126: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 127: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 128: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 129: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 130: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 131: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 132: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 133: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 134: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 135: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 136: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 137: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 138: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 139: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 140: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 141: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 142: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 143: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 144: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 145: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 146: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 147: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 148: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 149: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 150: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 151: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 152: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 153: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 154: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 155: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 156: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 157: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 158: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 159: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 160: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 161: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 162: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 163: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 164: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 165: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 166: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 167: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 168: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 169: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 170: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 171: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 172: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 173: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 174: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 175: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 176: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 177: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 178: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 179: Keep this section documented and easy to maintain.
-# Responsive Design Notes item 180: Keep this section documented and easy to maintain.
-#
-# LANGUAGE MODE NOTES
-# ------------------------------------------------------------------------
-# Language Mode Notes item 1: Keep this section documented and easy to maintain.
-# Language Mode Notes item 2: Keep this section documented and easy to maintain.
-# Language Mode Notes item 3: Keep this section documented and easy to maintain.
-# Language Mode Notes item 4: Keep this section documented and easy to maintain.
-# Language Mode Notes item 5: Keep this section documented and easy to maintain.
-# Language Mode Notes item 6: Keep this section documented and easy to maintain.
-# Language Mode Notes item 7: Keep this section documented and easy to maintain.
-# Language Mode Notes item 8: Keep this section documented and easy to maintain.
-# Language Mode Notes item 9: Keep this section documented and easy to maintain.
-# Language Mode Notes item 10: Keep this section documented and easy to maintain.
-# Language Mode Notes item 11: Keep this section documented and easy to maintain.
-# Language Mode Notes item 12: Keep this section documented and easy to maintain.
-# Language Mode Notes item 13: Keep this section documented and easy to maintain.
-# Language Mode Notes item 14: Keep this section documented and easy to maintain.
-# Language Mode Notes item 15: Keep this section documented and easy to maintain.
-# Language Mode Notes item 16: Keep this section documented and easy to maintain.
-# Language Mode Notes item 17: Keep this section documented and easy to maintain.
-# Language Mode Notes item 18: Keep this section documented and easy to maintain.
-# Language Mode Notes item 19: Keep this section documented and easy to maintain.
-# Language Mode Notes item 20: Keep this section documented and easy to maintain.
-# Language Mode Notes item 21: Keep this section documented and easy to maintain.
-# Language Mode Notes item 22: Keep this section documented and easy to maintain.
-# Language Mode Notes item 23: Keep this section documented and easy to maintain.
-# Language Mode Notes item 24: Keep this section documented and easy to maintain.
-# Language Mode Notes item 25: Keep this section documented and easy to maintain.
-# Language Mode Notes item 26: Keep this section documented and easy to maintain.
-# Language Mode Notes item 27: Keep this section documented and easy to maintain.
-# Language Mode Notes item 28: Keep this section documented and easy to maintain.
-# Language Mode Notes item 29: Keep this section documented and easy to maintain.
-# Language Mode Notes item 30: Keep this section documented and easy to maintain.
-# Language Mode Notes item 31: Keep this section documented and easy to maintain.
-# Language Mode Notes item 32: Keep this section documented and easy to maintain.
-# Language Mode Notes item 33: Keep this section documented and easy to maintain.
-# Language Mode Notes item 34: Keep this section documented and easy to maintain.
-# Language Mode Notes item 35: Keep this section documented and easy to maintain.
-# Language Mode Notes item 36: Keep this section documented and easy to maintain.
-# Language Mode Notes item 37: Keep this section documented and easy to maintain.
-# Language Mode Notes item 38: Keep this section documented and easy to maintain.
-# Language Mode Notes item 39: Keep this section documented and easy to maintain.
-# Language Mode Notes item 40: Keep this section documented and easy to maintain.
-# Language Mode Notes item 41: Keep this section documented and easy to maintain.
-# Language Mode Notes item 42: Keep this section documented and easy to maintain.
-# Language Mode Notes item 43: Keep this section documented and easy to maintain.
-# Language Mode Notes item 44: Keep this section documented and easy to maintain.
-# Language Mode Notes item 45: Keep this section documented and easy to maintain.
-# Language Mode Notes item 46: Keep this section documented and easy to maintain.
-# Language Mode Notes item 47: Keep this section documented and easy to maintain.
-# Language Mode Notes item 48: Keep this section documented and easy to maintain.
-# Language Mode Notes item 49: Keep this section documented and easy to maintain.
-# Language Mode Notes item 50: Keep this section documented and easy to maintain.
-# Language Mode Notes item 51: Keep this section documented and easy to maintain.
-# Language Mode Notes item 52: Keep this section documented and easy to maintain.
-# Language Mode Notes item 53: Keep this section documented and easy to maintain.
-# Language Mode Notes item 54: Keep this section documented and easy to maintain.
-# Language Mode Notes item 55: Keep this section documented and easy to maintain.
-# Language Mode Notes item 56: Keep this section documented and easy to maintain.
-# Language Mode Notes item 57: Keep this section documented and easy to maintain.
-# Language Mode Notes item 58: Keep this section documented and easy to maintain.
-# Language Mode Notes item 59: Keep this section documented and easy to maintain.
-# Language Mode Notes item 60: Keep this section documented and easy to maintain.
-# Language Mode Notes item 61: Keep this section documented and easy to maintain.
-# Language Mode Notes item 62: Keep this section documented and easy to maintain.
-# Language Mode Notes item 63: Keep this section documented and easy to maintain.
-# Language Mode Notes item 64: Keep this section documented and easy to maintain.
-# Language Mode Notes item 65: Keep this section documented and easy to maintain.
-# Language Mode Notes item 66: Keep this section documented and easy to maintain.
-# Language Mode Notes item 67: Keep this section documented and easy to maintain.
-# Language Mode Notes item 68: Keep this section documented and easy to maintain.
-# Language Mode Notes item 69: Keep this section documented and easy to maintain.
-# Language Mode Notes item 70: Keep this section documented and easy to maintain.
-# Language Mode Notes item 71: Keep this section documented and easy to maintain.
-# Language Mode Notes item 72: Keep this section documented and easy to maintain.
-# Language Mode Notes item 73: Keep this section documented and easy to maintain.
-# Language Mode Notes item 74: Keep this section documented and easy to maintain.
-# Language Mode Notes item 75: Keep this section documented and easy to maintain.
-# Language Mode Notes item 76: Keep this section documented and easy to maintain.
-# Language Mode Notes item 77: Keep this section documented and easy to maintain.
-# Language Mode Notes item 78: Keep this section documented and easy to maintain.
-# Language Mode Notes item 79: Keep this section documented and easy to maintain.
-# Language Mode Notes item 80: Keep this section documented and easy to maintain.
-# Language Mode Notes item 81: Keep this section documented and easy to maintain.
-# Language Mode Notes item 82: Keep this section documented and easy to maintain.
-# Language Mode Notes item 83: Keep this section documented and easy to maintain.
-# Language Mode Notes item 84: Keep this section documented and easy to maintain.
-# Language Mode Notes item 85: Keep this section documented and easy to maintain.
-# Language Mode Notes item 86: Keep this section documented and easy to maintain.
-# Language Mode Notes item 87: Keep this section documented and easy to maintain.
-# Language Mode Notes item 88: Keep this section documented and easy to maintain.
-# Language Mode Notes item 89: Keep this section documented and easy to maintain.
-# Language Mode Notes item 90: Keep this section documented and easy to maintain.
-# Language Mode Notes item 91: Keep this section documented and easy to maintain.
-# Language Mode Notes item 92: Keep this section documented and easy to maintain.
-# Language Mode Notes item 93: Keep this section documented and easy to maintain.
-# Language Mode Notes item 94: Keep this section documented and easy to maintain.
-# Language Mode Notes item 95: Keep this section documented and easy to maintain.
-# Language Mode Notes item 96: Keep this section documented and easy to maintain.
-# Language Mode Notes item 97: Keep this section documented and easy to maintain.
-# Language Mode Notes item 98: Keep this section documented and easy to maintain.
-# Language Mode Notes item 99: Keep this section documented and easy to maintain.
-# Language Mode Notes item 100: Keep this section documented and easy to maintain.
-# Language Mode Notes item 101: Keep this section documented and easy to maintain.
-# Language Mode Notes item 102: Keep this section documented and easy to maintain.
-# Language Mode Notes item 103: Keep this section documented and easy to maintain.
-# Language Mode Notes item 104: Keep this section documented and easy to maintain.
-# Language Mode Notes item 105: Keep this section documented and easy to maintain.
-# Language Mode Notes item 106: Keep this section documented and easy to maintain.
-# Language Mode Notes item 107: Keep this section documented and easy to maintain.
-# Language Mode Notes item 108: Keep this section documented and easy to maintain.
-# Language Mode Notes item 109: Keep this section documented and easy to maintain.
-# Language Mode Notes item 110: Keep this section documented and easy to maintain.
-# Language Mode Notes item 111: Keep this section documented and easy to maintain.
-# Language Mode Notes item 112: Keep this section documented and easy to maintain.
-# Language Mode Notes item 113: Keep this section documented and easy to maintain.
-# Language Mode Notes item 114: Keep this section documented and easy to maintain.
-# Language Mode Notes item 115: Keep this section documented and easy to maintain.
-# Language Mode Notes item 116: Keep this section documented and easy to maintain.
-# Language Mode Notes item 117: Keep this section documented and easy to maintain.
-# Language Mode Notes item 118: Keep this section documented and easy to maintain.
-# Language Mode Notes item 119: Keep this section documented and easy to maintain.
-# Language Mode Notes item 120: Keep this section documented and easy to maintain.
-# Language Mode Notes item 121: Keep this section documented and easy to maintain.
-# Language Mode Notes item 122: Keep this section documented and easy to maintain.
-# Language Mode Notes item 123: Keep this section documented and easy to maintain.
-# Language Mode Notes item 124: Keep this section documented and easy to maintain.
-# Language Mode Notes item 125: Keep this section documented and easy to maintain.
-# Language Mode Notes item 126: Keep this section documented and easy to maintain.
-# Language Mode Notes item 127: Keep this section documented and easy to maintain.
-# Language Mode Notes item 128: Keep this section documented and easy to maintain.
-# Language Mode Notes item 129: Keep this section documented and easy to maintain.
-# Language Mode Notes item 130: Keep this section documented and easy to maintain.
-# Language Mode Notes item 131: Keep this section documented and easy to maintain.
-# Language Mode Notes item 132: Keep this section documented and easy to maintain.
-# Language Mode Notes item 133: Keep this section documented and easy to maintain.
-# Language Mode Notes item 134: Keep this section documented and easy to maintain.
-# Language Mode Notes item 135: Keep this section documented and easy to maintain.
-# Language Mode Notes item 136: Keep this section documented and easy to maintain.
-# Language Mode Notes item 137: Keep this section documented and easy to maintain.
-# Language Mode Notes item 138: Keep this section documented and easy to maintain.
-# Language Mode Notes item 139: Keep this section documented and easy to maintain.
-# Language Mode Notes item 140: Keep this section documented and easy to maintain.
-# Language Mode Notes item 141: Keep this section documented and easy to maintain.
-# Language Mode Notes item 142: Keep this section documented and easy to maintain.
-# Language Mode Notes item 143: Keep this section documented and easy to maintain.
-# Language Mode Notes item 144: Keep this section documented and easy to maintain.
-# Language Mode Notes item 145: Keep this section documented and easy to maintain.
-# Language Mode Notes item 146: Keep this section documented and easy to maintain.
-# Language Mode Notes item 147: Keep this section documented and easy to maintain.
-# Language Mode Notes item 148: Keep this section documented and easy to maintain.
-# Language Mode Notes item 149: Keep this section documented and easy to maintain.
-# Language Mode Notes item 150: Keep this section documented and easy to maintain.
-# Language Mode Notes item 151: Keep this section documented and easy to maintain.
-# Language Mode Notes item 152: Keep this section documented and easy to maintain.
-# Language Mode Notes item 153: Keep this section documented and easy to maintain.
-# Language Mode Notes item 154: Keep this section documented and easy to maintain.
-# Language Mode Notes item 155: Keep this section documented and easy to maintain.
-# Language Mode Notes item 156: Keep this section documented and easy to maintain.
-# Language Mode Notes item 157: Keep this section documented and easy to maintain.
-# Language Mode Notes item 158: Keep this section documented and easy to maintain.
-# Language Mode Notes item 159: Keep this section documented and easy to maintain.
-# Language Mode Notes item 160: Keep this section documented and easy to maintain.
-# Language Mode Notes item 161: Keep this section documented and easy to maintain.
-# Language Mode Notes item 162: Keep this section documented and easy to maintain.
-# Language Mode Notes item 163: Keep this section documented and easy to maintain.
-# Language Mode Notes item 164: Keep this section documented and easy to maintain.
-# Language Mode Notes item 165: Keep this section documented and easy to maintain.
-# Language Mode Notes item 166: Keep this section documented and easy to maintain.
-# Language Mode Notes item 167: Keep this section documented and easy to maintain.
-# Language Mode Notes item 168: Keep this section documented and easy to maintain.
-# Language Mode Notes item 169: Keep this section documented and easy to maintain.
-# Language Mode Notes item 170: Keep this section documented and easy to maintain.
-# Language Mode Notes item 171: Keep this section documented and easy to maintain.
-# Language Mode Notes item 172: Keep this section documented and easy to maintain.
-# Language Mode Notes item 173: Keep this section documented and easy to maintain.
-# Language Mode Notes item 174: Keep this section documented and easy to maintain.
-# Language Mode Notes item 175: Keep this section documented and easy to maintain.
-# Language Mode Notes item 176: Keep this section documented and easy to maintain.
-# Language Mode Notes item 177: Keep this section documented and easy to maintain.
-# Language Mode Notes item 178: Keep this section documented and easy to maintain.
-# Language Mode Notes item 179: Keep this section documented and easy to maintain.
-# Language Mode Notes item 180: Keep this section documented and easy to maintain.
-#
-# STAFF DASHBOARD NOTES
-# ------------------------------------------------------------------------
-# Staff Dashboard Notes item 1: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 2: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 3: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 4: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 5: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 6: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 7: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 8: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 9: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 10: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 11: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 12: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 13: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 14: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 15: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 16: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 17: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 18: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 19: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 20: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 21: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 22: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 23: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 24: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 25: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 26: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 27: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 28: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 29: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 30: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 31: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 32: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 33: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 34: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 35: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 36: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 37: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 38: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 39: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 40: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 41: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 42: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 43: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 44: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 45: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 46: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 47: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 48: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 49: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 50: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 51: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 52: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 53: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 54: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 55: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 56: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 57: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 58: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 59: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 60: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 61: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 62: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 63: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 64: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 65: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 66: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 67: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 68: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 69: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 70: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 71: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 72: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 73: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 74: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 75: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 76: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 77: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 78: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 79: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 80: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 81: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 82: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 83: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 84: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 85: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 86: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 87: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 88: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 89: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 90: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 91: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 92: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 93: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 94: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 95: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 96: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 97: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 98: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 99: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 100: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 101: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 102: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 103: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 104: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 105: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 106: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 107: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 108: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 109: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 110: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 111: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 112: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 113: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 114: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 115: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 116: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 117: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 118: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 119: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 120: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 121: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 122: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 123: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 124: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 125: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 126: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 127: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 128: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 129: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 130: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 131: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 132: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 133: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 134: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 135: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 136: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 137: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 138: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 139: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 140: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 141: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 142: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 143: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 144: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 145: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 146: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 147: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 148: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 149: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 150: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 151: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 152: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 153: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 154: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 155: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 156: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 157: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 158: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 159: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 160: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 161: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 162: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 163: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 164: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 165: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 166: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 167: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 168: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 169: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 170: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 171: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 172: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 173: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 174: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 175: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 176: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 177: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 178: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 179: Keep this section documented and easy to maintain.
-# Staff Dashboard Notes item 180: Keep this section documented and easy to maintain.
-#
-# PATIENT ASSISTANCE NOTES
-# ------------------------------------------------------------------------
-# Patient Assistance Notes item 1: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 2: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 3: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 4: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 5: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 6: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 7: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 8: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 9: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 10: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 11: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 12: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 13: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 14: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 15: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 16: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 17: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 18: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 19: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 20: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 21: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 22: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 23: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 24: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 25: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 26: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 27: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 28: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 29: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 30: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 31: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 32: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 33: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 34: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 35: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 36: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 37: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 38: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 39: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 40: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 41: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 42: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 43: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 44: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 45: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 46: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 47: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 48: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 49: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 50: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 51: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 52: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 53: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 54: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 55: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 56: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 57: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 58: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 59: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 60: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 61: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 62: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 63: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 64: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 65: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 66: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 67: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 68: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 69: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 70: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 71: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 72: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 73: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 74: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 75: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 76: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 77: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 78: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 79: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 80: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 81: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 82: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 83: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 84: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 85: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 86: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 87: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 88: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 89: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 90: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 91: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 92: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 93: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 94: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 95: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 96: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 97: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 98: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 99: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 100: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 101: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 102: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 103: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 104: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 105: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 106: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 107: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 108: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 109: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 110: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 111: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 112: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 113: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 114: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 115: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 116: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 117: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 118: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 119: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 120: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 121: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 122: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 123: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 124: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 125: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 126: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 127: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 128: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 129: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 130: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 131: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 132: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 133: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 134: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 135: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 136: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 137: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 138: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 139: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 140: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 141: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 142: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 143: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 144: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 145: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 146: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 147: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 148: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 149: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 150: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 151: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 152: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 153: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 154: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 155: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 156: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 157: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 158: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 159: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 160: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 161: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 162: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 163: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 164: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 165: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 166: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 167: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 168: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 169: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 170: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 171: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 172: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 173: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 174: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 175: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 176: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 177: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 178: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 179: Keep this section documented and easy to maintain.
-# Patient Assistance Notes item 180: Keep this section documented and easy to maintain.
-#
-# SECURITY NOTES
-# ------------------------------------------------------------------------
-# Security Notes item 1: Keep this section documented and easy to maintain.
-# Security Notes item 2: Keep this section documented and easy to maintain.
-# Security Notes item 3: Keep this section documented and easy to maintain.
-# Security Notes item 4: Keep this section documented and easy to maintain.
-# Security Notes item 5: Keep this section documented and easy to maintain.
-# Security Notes item 6: Keep this section documented and easy to maintain.
-# Security Notes item 7: Keep this section documented and easy to maintain.
-# Security Notes item 8: Keep this section documented and easy to maintain.
-# Security Notes item 9: Keep this section documented and easy to maintain.
-# Security Notes item 10: Keep this section documented and easy to maintain.
-# Security Notes item 11: Keep this section documented and easy to maintain.
-# Security Notes item 12: Keep this section documented and easy to maintain.
-# Security Notes item 13: Keep this section documented and easy to maintain.
-# Security Notes item 14: Keep this section documented and easy to maintain.
-# Security Notes item 15: Keep this section documented and easy to maintain.
-# Security Notes item 16: Keep this section documented and easy to maintain.
-# Security Notes item 17: Keep this section documented and easy to maintain.
-# Security Notes item 18: Keep this section documented and easy to maintain.
-# Security Notes item 19: Keep this section documented and easy to maintain.
-# Security Notes item 20: Keep this section documented and easy to maintain.
-# Security Notes item 21: Keep this section documented and easy to maintain.
-# Security Notes item 22: Keep this section documented and easy to maintain.
-# Security Notes item 23: Keep this section documented and easy to maintain.
-# Security Notes item 24: Keep this section documented and easy to maintain.
-# Security Notes item 25: Keep this section documented and easy to maintain.
-# Security Notes item 26: Keep this section documented and easy to maintain.
-# Security Notes item 27: Keep this section documented and easy to maintain.
-# Security Notes item 28: Keep this section documented and easy to maintain.
-# Security Notes item 29: Keep this section documented and easy to maintain.
-# Security Notes item 30: Keep this section documented and easy to maintain.
-# Security Notes item 31: Keep this section documented and easy to maintain.
-# Security Notes item 32: Keep this section documented and easy to maintain.
-# Security Notes item 33: Keep this section documented and easy to maintain.
-# Security Notes item 34: Keep this section documented and easy to maintain.
-# Security Notes item 35: Keep this section documented and easy to maintain.
-# Security Notes item 36: Keep this section documented and easy to maintain.
-# Security Notes item 37: Keep this section documented and easy to maintain.
-# Security Notes item 38: Keep this section documented and easy to maintain.
-# Security Notes item 39: Keep this section documented and easy to maintain.
-# Security Notes item 40: Keep this section documented and easy to maintain.
-# Security Notes item 41: Keep this section documented and easy to maintain.
-# Security Notes item 42: Keep this section documented and easy to maintain.
-# Security Notes item 43: Keep this section documented and easy to maintain.
-# Security Notes item 44: Keep this section documented and easy to maintain.
-# Security Notes item 45: Keep this section documented and easy to maintain.
-# Security Notes item 46: Keep this section documented and easy to maintain.
-# Security Notes item 47: Keep this section documented and easy to maintain.
-# Security Notes item 48: Keep this section documented and easy to maintain.
-# Security Notes item 49: Keep this section documented and easy to maintain.
-# Security Notes item 50: Keep this section documented and easy to maintain.
-# Security Notes item 51: Keep this section documented and easy to maintain.
-# Security Notes item 52: Keep this section documented and easy to maintain.
-# Security Notes item 53: Keep this section documented and easy to maintain.
-# Security Notes item 54: Keep this section documented and easy to maintain.
-# Security Notes item 55: Keep this section documented and easy to maintain.
-# Security Notes item 56: Keep this section documented and easy to maintain.
-# Security Notes item 57: Keep this section documented and easy to maintain.
-# Security Notes item 58: Keep this section documented and easy to maintain.
-# Security Notes item 59: Keep this section documented and easy to maintain.
-# Security Notes item 60: Keep this section documented and easy to maintain.
-# Security Notes item 61: Keep this section documented and easy to maintain.
-# Security Notes item 62: Keep this section documented and easy to maintain.
-# Security Notes item 63: Keep this section documented and easy to maintain.
-# Security Notes item 64: Keep this section documented and easy to maintain.
-# Security Notes item 65: Keep this section documented and easy to maintain.
-# Security Notes item 66: Keep this section documented and easy to maintain.
-# Security Notes item 67: Keep this section documented and easy to maintain.
-# Security Notes item 68: Keep this section documented and easy to maintain.
-# Security Notes item 69: Keep this section documented and easy to maintain.
-# Security Notes item 70: Keep this section documented and easy to maintain.
-# Security Notes item 71: Keep this section documented and easy to maintain.
-# Security Notes item 72: Keep this section documented and easy to maintain.
-# Security Notes item 73: Keep this section documented and easy to maintain.
-# Security Notes item 74: Keep this section documented and easy to maintain.
-# Security Notes item 75: Keep this section documented and easy to maintain.
-# Security Notes item 76: Keep this section documented and easy to maintain.
-# Security Notes item 77: Keep this section documented and easy to maintain.
-# Security Notes item 78: Keep this section documented and easy to maintain.
-# Security Notes item 79: Keep this section documented and easy to maintain.
-# Security Notes item 80: Keep this section documented and easy to maintain.
-# Security Notes item 81: Keep this section documented and easy to maintain.
-# Security Notes item 82: Keep this section documented and easy to maintain.
-# Security Notes item 83: Keep this section documented and easy to maintain.
-# Security Notes item 84: Keep this section documented and easy to maintain.
-# Security Notes item 85: Keep this section documented and easy to maintain.
-# Security Notes item 86: Keep this section documented and easy to maintain.
-# Security Notes item 87: Keep this section documented and easy to maintain.
-# Security Notes item 88: Keep this section documented and easy to maintain.
-# Security Notes item 89: Keep this section documented and easy to maintain.
-# Security Notes item 90: Keep this section documented and easy to maintain.
-# Security Notes item 91: Keep this section documented and easy to maintain.
-# Security Notes item 92: Keep this section documented and easy to maintain.
-# Security Notes item 93: Keep this section documented and easy to maintain.
-# Security Notes item 94: Keep this section documented and easy to maintain.
-# Security Notes item 95: Keep this section documented and easy to maintain.
-# Security Notes item 96: Keep this section documented and easy to maintain.
-# Security Notes item 97: Keep this section documented and easy to maintain.
-# Security Notes item 98: Keep this section documented and easy to maintain.
-# Security Notes item 99: Keep this section documented and easy to maintain.
-# Security Notes item 100: Keep this section documented and easy to maintain.
-# Security Notes item 101: Keep this section documented and easy to maintain.
-# Security Notes item 102: Keep this section documented and easy to maintain.
-# Security Notes item 103: Keep this section documented and easy to maintain.
-# Security Notes item 104: Keep this section documented and easy to maintain.
-# Security Notes item 105: Keep this section documented and easy to maintain.
-# Security Notes item 106: Keep this section documented and easy to maintain.
-# Security Notes item 107: Keep this section documented and easy to maintain.
-# Security Notes item 108: Keep this section documented and easy to maintain.
-# Security Notes item 109: Keep this section documented and easy to maintain.
-# Security Notes item 110: Keep this section documented and easy to maintain.
-# Security Notes item 111: Keep this section documented and easy to maintain.
-# Security Notes item 112: Keep this section documented and easy to maintain.
-# Security Notes item 113: Keep this section documented and easy to maintain.
-# Security Notes item 114: Keep this section documented and easy to maintain.
-# Security Notes item 115: Keep this section documented and easy to maintain.
-# Security Notes item 116: Keep this section documented and easy to maintain.
-# Security Notes item 117: Keep this section documented and easy to maintain.
-# Security Notes item 118: Keep this section documented and easy to maintain.
-# Security Notes item 119: Keep this section documented and easy to maintain.
-# Security Notes item 120: Keep this section documented and easy to maintain.
-# Security Notes item 121: Keep this section documented and easy to maintain.
-# Security Notes item 122: Keep this section documented and easy to maintain.
-# Security Notes item 123: Keep this section documented and easy to maintain.
-# Security Notes item 124: Keep this section documented and easy to maintain.
-# Security Notes item 125: Keep this section documented and easy to maintain.
-# Security Notes item 126: Keep this section documented and easy to maintain.
-# Security Notes item 127: Keep this section documented and easy to maintain.
-# Security Notes item 128: Keep this section documented and easy to maintain.
-# Security Notes item 129: Keep this section documented and easy to maintain.
-# Security Notes item 130: Keep this section documented and easy to maintain.
-# Security Notes item 131: Keep this section documented and easy to maintain.
-# Security Notes item 132: Keep this section documented and easy to maintain.
-# Security Notes item 133: Keep this section documented and easy to maintain.
-# Security Notes item 134: Keep this section documented and easy to maintain.
-# Security Notes item 135: Keep this section documented and easy to maintain.
-# Security Notes item 136: Keep this section documented and easy to maintain.
-# Security Notes item 137: Keep this section documented and easy to maintain.
-# Security Notes item 138: Keep this section documented and easy to maintain.
-# Security Notes item 139: Keep this section documented and easy to maintain.
-# Security Notes item 140: Keep this section documented and easy to maintain.
-# Security Notes item 141: Keep this section documented and easy to maintain.
-# Security Notes item 142: Keep this section documented and easy to maintain.
-# Security Notes item 143: Keep this section documented and easy to maintain.
-# Security Notes item 144: Keep this section documented and easy to maintain.
-# Security Notes item 145: Keep this section documented and easy to maintain.
-# Security Notes item 146: Keep this section documented and easy to maintain.
-# Security Notes item 147: Keep this section documented and easy to maintain.
-# Security Notes item 148: Keep this section documented and easy to maintain.
-# Security Notes item 149: Keep this section documented and easy to maintain.
-# Security Notes item 150: Keep this section documented and easy to maintain.
-# Security Notes item 151: Keep this section documented and easy to maintain.
-# Security Notes item 152: Keep this section documented and easy to maintain.
-# Security Notes item 153: Keep this section documented and easy to maintain.
-# Security Notes item 154: Keep this section documented and easy to maintain.
-# Security Notes item 155: Keep this section documented and easy to maintain.
-# Security Notes item 156: Keep this section documented and easy to maintain.
-# Security Notes item 157: Keep this section documented and easy to maintain.
-# Security Notes item 158: Keep this section documented and easy to maintain.
-# Security Notes item 159: Keep this section documented and easy to maintain.
-# Security Notes item 160: Keep this section documented and easy to maintain.
-# Security Notes item 161: Keep this section documented and easy to maintain.
-# Security Notes item 162: Keep this section documented and easy to maintain.
-# Security Notes item 163: Keep this section documented and easy to maintain.
-# Security Notes item 164: Keep this section documented and easy to maintain.
-# Security Notes item 165: Keep this section documented and easy to maintain.
-# Security Notes item 166: Keep this section documented and easy to maintain.
-# Security Notes item 167: Keep this section documented and easy to maintain.
-# Security Notes item 168: Keep this section documented and easy to maintain.
-# Security Notes item 169: Keep this section documented and easy to maintain.
-# Security Notes item 170: Keep this section documented and easy to maintain.
-# Security Notes item 171: Keep this section documented and easy to maintain.
-# Security Notes item 172: Keep this section documented and easy to maintain.
-# Security Notes item 173: Keep this section documented and easy to maintain.
-# Security Notes item 174: Keep this section documented and easy to maintain.
-# Security Notes item 175: Keep this section documented and easy to maintain.
-# Security Notes item 176: Keep this section documented and easy to maintain.
-# Security Notes item 177: Keep this section documented and easy to maintain.
-# Security Notes item 178: Keep this section documented and easy to maintain.
-# Security Notes item 179: Keep this section documented and easy to maintain.
-# Security Notes item 180: Keep this section documented and easy to maintain.
-#
-# DEPLOYMENT NOTES
-# ------------------------------------------------------------------------
-# Deployment Notes item 1: Keep this section documented and easy to maintain.
-# Deployment Notes item 2: Keep this section documented and easy to maintain.
-# Deployment Notes item 3: Keep this section documented and easy to maintain.
-# Deployment Notes item 4: Keep this section documented and easy to maintain.
-# Deployment Notes item 5: Keep this section documented and easy to maintain.
-# Deployment Notes item 6: Keep this section documented and easy to maintain.
-# Deployment Notes item 7: Keep this section documented and easy to maintain.
-# Deployment Notes item 8: Keep this section documented and easy to maintain.
-# Deployment Notes item 9: Keep this section documented and easy to maintain.
-# Deployment Notes item 10: Keep this section documented and easy to maintain.
-# Deployment Notes item 11: Keep this section documented and easy to maintain.
-# Deployment Notes item 12: Keep this section documented and easy to maintain.
-# Deployment Notes item 13: Keep this section documented and easy to maintain.
-# Deployment Notes item 14: Keep this section documented and easy to maintain.
-# Deployment Notes item 15: Keep this section documented and easy to maintain.
-# Deployment Notes item 16: Keep this section documented and easy to maintain.
-# Deployment Notes item 17: Keep this section documented and easy to maintain.
-# Deployment Notes item 18: Keep this section documented and easy to maintain.
-# Deployment Notes item 19: Keep this section documented and easy to maintain.
-# Deployment Notes item 20: Keep this section documented and easy to maintain.
-# Deployment Notes item 21: Keep this section documented and easy to maintain.
-# Deployment Notes item 22: Keep this section documented and easy to maintain.
-# Deployment Notes item 23: Keep this section documented and easy to maintain.
-# Deployment Notes item 24: Keep this section documented and easy to maintain.
-# Deployment Notes item 25: Keep this section documented and easy to maintain.
-# Deployment Notes item 26: Keep this section documented and easy to maintain.
-# Deployment Notes item 27: Keep this section documented and easy to maintain.
-# Deployment Notes item 28: Keep this section documented and easy to maintain.
-# Deployment Notes item 29: Keep this section documented and easy to maintain.
-# Deployment Notes item 30: Keep this section documented and easy to maintain.
-# Deployment Notes item 31: Keep this section documented and easy to maintain.
-# Deployment Notes item 32: Keep this section documented and easy to maintain.
-# Deployment Notes item 33: Keep this section documented and easy to maintain.
-# Deployment Notes item 34: Keep this section documented and easy to maintain.
-# Deployment Notes item 35: Keep this section documented and easy to maintain.
-# Deployment Notes item 36: Keep this section documented and easy to maintain.
-# Deployment Notes item 37: Keep this section documented and easy to maintain.
-# Deployment Notes item 38: Keep this section documented and easy to maintain.
-# Deployment Notes item 39: Keep this section documented and easy to maintain.
-# Deployment Notes item 40: Keep this section documented and easy to maintain.
-# Deployment Notes item 41: Keep this section documented and easy to maintain.
-# Deployment Notes item 42: Keep this section documented and easy to maintain.
-# Deployment Notes item 43: Keep this section documented and easy to maintain.
-# Deployment Notes item 44: Keep this section documented and easy to maintain.
-# Deployment Notes item 45: Keep this section documented and easy to maintain.
-# Deployment Notes item 46: Keep this section documented and easy to maintain.
-# Deployment Notes item 47: Keep this section documented and easy to maintain.
-# Deployment Notes item 48: Keep this section documented and easy to maintain.
-# Deployment Notes item 49: Keep this section documented and easy to maintain.
-# Deployment Notes item 50: Keep this section documented and easy to maintain.
-# Deployment Notes item 51: Keep this section documented and easy to maintain.
-# Deployment Notes item 52: Keep this section documented and easy to maintain.
-# Deployment Notes item 53: Keep this section documented and easy to maintain.
-# Deployment Notes item 54: Keep this section documented and easy to maintain.
-# Deployment Notes item 55: Keep this section documented and easy to maintain.
-# Deployment Notes item 56: Keep this section documented and easy to maintain.
-# Deployment Notes item 57: Keep this section documented and easy to maintain.
-# Deployment Notes item 58: Keep this section documented and easy to maintain.
-# Deployment Notes item 59: Keep this section documented and easy to maintain.
-# Deployment Notes item 60: Keep this section documented and easy to maintain.
-# Deployment Notes item 61: Keep this section documented and easy to maintain.
-# Deployment Notes item 62: Keep this section documented and easy to maintain.
-# Deployment Notes item 63: Keep this section documented and easy to maintain.
-# Deployment Notes item 64: Keep this section documented and easy to maintain.
-# Deployment Notes item 65: Keep this section documented and easy to maintain.
-# Deployment Notes item 66: Keep this section documented and easy to maintain.
-# Deployment Notes item 67: Keep this section documented and easy to maintain.
-# Deployment Notes item 68: Keep this section documented and easy to maintain.
-# Deployment Notes item 69: Keep this section documented and easy to maintain.
-# Deployment Notes item 70: Keep this section documented and easy to maintain.
-# Deployment Notes item 71: Keep this section documented and easy to maintain.
-# Deployment Notes item 72: Keep this section documented and easy to maintain.
-# Deployment Notes item 73: Keep this section documented and easy to maintain.
-# Deployment Notes item 74: Keep this section documented and easy to maintain.
-# Deployment Notes item 75: Keep this section documented and easy to maintain.
-# Deployment Notes item 76: Keep this section documented and easy to maintain.
-# Deployment Notes item 77: Keep this section documented and easy to maintain.
-# Deployment Notes item 78: Keep this section documented and easy to maintain.
-# Deployment Notes item 79: Keep this section documented and easy to maintain.
-# Deployment Notes item 80: Keep this section documented and easy to maintain.
-# Deployment Notes item 81: Keep this section documented and easy to maintain.
-# Deployment Notes item 82: Keep this section documented and easy to maintain.
-# Deployment Notes item 83: Keep this section documented and easy to maintain.
-# Deployment Notes item 84: Keep this section documented and easy to maintain.
-# Deployment Notes item 85: Keep this section documented and easy to maintain.
-# Deployment Notes item 86: Keep this section documented and easy to maintain.
-# Deployment Notes item 87: Keep this section documented and easy to maintain.
-# Deployment Notes item 88: Keep this section documented and easy to maintain.
-# Deployment Notes item 89: Keep this section documented and easy to maintain.
-# Deployment Notes item 90: Keep this section documented and easy to maintain.
-# Deployment Notes item 91: Keep this section documented and easy to maintain.
-# Deployment Notes item 92: Keep this section documented and easy to maintain.
-# Deployment Notes item 93: Keep this section documented and easy to maintain.
-# Deployment Notes item 94: Keep this section documented and easy to maintain.
-# Deployment Notes item 95: Keep this section documented and easy to maintain.
-# Deployment Notes item 96: Keep this section documented and easy to maintain.
-# Deployment Notes item 97: Keep this section documented and easy to maintain.
-# Deployment Notes item 98: Keep this section documented and easy to maintain.
-# Deployment Notes item 99: Keep this section documented and easy to maintain.
-# Deployment Notes item 100: Keep this section documented and easy to maintain.
-# Deployment Notes item 101: Keep this section documented and easy to maintain.
-# Deployment Notes item 102: Keep this section documented and easy to maintain.
-# Deployment Notes item 103: Keep this section documented and easy to maintain.
-# Deployment Notes item 104: Keep this section documented and easy to maintain.
-# Deployment Notes item 105: Keep this section documented and easy to maintain.
-# Deployment Notes item 106: Keep this section documented and easy to maintain.
-# Deployment Notes item 107: Keep this section documented and easy to maintain.
-# Deployment Notes item 108: Keep this section documented and easy to maintain.
-# Deployment Notes item 109: Keep this section documented and easy to maintain.
-# Deployment Notes item 110: Keep this section documented and easy to maintain.
-# Deployment Notes item 111: Keep this section documented and easy to maintain.
-# Deployment Notes item 112: Keep this section documented and easy to maintain.
-# Deployment Notes item 113: Keep this section documented and easy to maintain.
-# Deployment Notes item 114: Keep this section documented and easy to maintain.
-# Deployment Notes item 115: Keep this section documented and easy to maintain.
-# Deployment Notes item 116: Keep this section documented and easy to maintain.
-# Deployment Notes item 117: Keep this section documented and easy to maintain.
-# Deployment Notes item 118: Keep this section documented and easy to maintain.
-# Deployment Notes item 119: Keep this section documented and easy to maintain.
-# Deployment Notes item 120: Keep this section documented and easy to maintain.
-# Deployment Notes item 121: Keep this section documented and easy to maintain.
-# Deployment Notes item 122: Keep this section documented and easy to maintain.
-# Deployment Notes item 123: Keep this section documented and easy to maintain.
-# Deployment Notes item 124: Keep this section documented and easy to maintain.
-# Deployment Notes item 125: Keep this section documented and easy to maintain.
-# Deployment Notes item 126: Keep this section documented and easy to maintain.
-# Deployment Notes item 127: Keep this section documented and easy to maintain.
-# Deployment Notes item 128: Keep this section documented and easy to maintain.
-# Deployment Notes item 129: Keep this section documented and easy to maintain.
-# Deployment Notes item 130: Keep this section documented and easy to maintain.
-# Deployment Notes item 131: Keep this section documented and easy to maintain.
-# Deployment Notes item 132: Keep this section documented and easy to maintain.
-# Deployment Notes item 133: Keep this section documented and easy to maintain.
-# Deployment Notes item 134: Keep this section documented and easy to maintain.
-# Deployment Notes item 135: Keep this section documented and easy to maintain.
-# Deployment Notes item 136: Keep this section documented and easy to maintain.
-# Deployment Notes item 137: Keep this section documented and easy to maintain.
-# Deployment Notes item 138: Keep this section documented and easy to maintain.
-# Deployment Notes item 139: Keep this section documented and easy to maintain.
-# Deployment Notes item 140: Keep this section documented and easy to maintain.
-# Deployment Notes item 141: Keep this section documented and easy to maintain.
-# Deployment Notes item 142: Keep this section documented and easy to maintain.
-# Deployment Notes item 143: Keep this section documented and easy to maintain.
-# Deployment Notes item 144: Keep this section documented and easy to maintain.
-# Deployment Notes item 145: Keep this section documented and easy to maintain.
-# Deployment Notes item 146: Keep this section documented and easy to maintain.
-# Deployment Notes item 147: Keep this section documented and easy to maintain.
-# Deployment Notes item 148: Keep this section documented and easy to maintain.
-# Deployment Notes item 149: Keep this section documented and easy to maintain.
-# Deployment Notes item 150: Keep this section documented and easy to maintain.
-# Deployment Notes item 151: Keep this section documented and easy to maintain.
-# Deployment Notes item 152: Keep this section documented and easy to maintain.
-# Deployment Notes item 153: Keep this section documented and easy to maintain.
-# Deployment Notes item 154: Keep this section documented and easy to maintain.
-# Deployment Notes item 155: Keep this section documented and easy to maintain.
-# Deployment Notes item 156: Keep this section documented and easy to maintain.
-# Deployment Notes item 157: Keep this section documented and easy to maintain.
-# Deployment Notes item 158: Keep this section documented and easy to maintain.
-# Deployment Notes item 159: Keep this section documented and easy to maintain.
-# Deployment Notes item 160: Keep this section documented and easy to maintain.
-# Deployment Notes item 161: Keep this section documented and easy to maintain.
-# Deployment Notes item 162: Keep this section documented and easy to maintain.
-# Deployment Notes item 163: Keep this section documented and easy to maintain.
-# Deployment Notes item 164: Keep this section documented and easy to maintain.
-# Deployment Notes item 165: Keep this section documented and easy to maintain.
-# Deployment Notes item 166: Keep this section documented and easy to maintain.
-# Deployment Notes item 167: Keep this section documented and easy to maintain.
-# Deployment Notes item 168: Keep this section documented and easy to maintain.
-# Deployment Notes item 169: Keep this section documented and easy to maintain.
-# Deployment Notes item 170: Keep this section documented and easy to maintain.
-# Deployment Notes item 171: Keep this section documented and easy to maintain.
-# Deployment Notes item 172: Keep this section documented and easy to maintain.
-# Deployment Notes item 173: Keep this section documented and easy to maintain.
-# Deployment Notes item 174: Keep this section documented and easy to maintain.
-# Deployment Notes item 175: Keep this section documented and easy to maintain.
-# Deployment Notes item 176: Keep this section documented and easy to maintain.
-# Deployment Notes item 177: Keep this section documented and easy to maintain.
-# Deployment Notes item 178: Keep this section documented and easy to maintain.
-# Deployment Notes item 179: Keep this section documented and easy to maintain.
-# Deployment Notes item 180: Keep this section documented and easy to maintain.
-#
-# SELF-CARE RESOURCE NOTES
-# ------------------------------------------------------------------------
-# Self-Care Resource Notes item 1: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 2: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 3: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 4: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 5: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 6: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 7: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 8: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 9: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 10: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 11: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 12: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 13: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 14: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 15: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 16: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 17: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 18: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 19: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 20: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 21: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 22: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 23: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 24: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 25: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 26: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 27: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 28: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 29: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 30: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 31: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 32: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 33: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 34: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 35: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 36: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 37: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 38: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 39: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 40: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 41: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 42: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 43: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 44: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 45: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 46: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 47: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 48: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 49: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 50: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 51: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 52: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 53: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 54: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 55: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 56: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 57: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 58: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 59: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 60: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 61: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 62: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 63: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 64: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 65: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 66: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 67: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 68: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 69: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 70: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 71: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 72: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 73: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 74: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 75: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 76: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 77: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 78: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 79: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 80: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 81: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 82: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 83: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 84: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 85: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 86: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 87: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 88: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 89: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 90: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 91: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 92: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 93: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 94: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 95: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 96: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 97: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 98: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 99: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 100: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 101: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 102: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 103: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 104: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 105: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 106: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 107: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 108: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 109: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 110: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 111: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 112: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 113: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 114: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 115: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 116: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 117: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 118: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 119: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 120: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 121: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 122: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 123: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 124: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 125: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 126: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 127: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 128: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 129: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 130: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 131: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 132: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 133: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 134: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 135: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 136: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 137: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 138: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 139: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 140: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 141: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 142: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 143: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 144: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 145: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 146: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 147: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 148: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 149: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 150: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 151: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 152: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 153: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 154: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 155: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 156: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 157: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 158: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 159: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 160: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 161: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 162: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 163: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 164: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 165: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 166: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 167: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 168: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 169: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 170: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 171: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 172: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 173: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 174: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 175: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 176: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 177: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 178: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 179: Keep this section documented and easy to maintain.
-# Self-Care Resource Notes item 180: Keep this section documented and easy to maintain.
-#
-# MAINTENANCE CHECKLIST
-# ------------------------------------------------------------------------
-# Maintenance Checklist item 1: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 2: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 3: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 4: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 5: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 6: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 7: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 8: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 9: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 10: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 11: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 12: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 13: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 14: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 15: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 16: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 17: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 18: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 19: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 20: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 21: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 22: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 23: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 24: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 25: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 26: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 27: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 28: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 29: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 30: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 31: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 32: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 33: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 34: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 35: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 36: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 37: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 38: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 39: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 40: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 41: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 42: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 43: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 44: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 45: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 46: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 47: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 48: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 49: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 50: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 51: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 52: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 53: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 54: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 55: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 56: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 57: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 58: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 59: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 60: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 61: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 62: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 63: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 64: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 65: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 66: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 67: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 68: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 69: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 70: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 71: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 72: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 73: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 74: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 75: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 76: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 77: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 78: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 79: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 80: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 81: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 82: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 83: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 84: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 85: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 86: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 87: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 88: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 89: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 90: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 91: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 92: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 93: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 94: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 95: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 96: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 97: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 98: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 99: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 100: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 101: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 102: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 103: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 104: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 105: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 106: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 107: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 108: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 109: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 110: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 111: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 112: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 113: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 114: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 115: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 116: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 117: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 118: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 119: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 120: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 121: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 122: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 123: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 124: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 125: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 126: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 127: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 128: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 129: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 130: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 131: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 132: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 133: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 134: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 135: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 136: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 137: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 138: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 139: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 140: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 141: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 142: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 143: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 144: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 145: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 146: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 147: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 148: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 149: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 150: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 151: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 152: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 153: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 154: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 155: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 156: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 157: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 158: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 159: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 160: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 161: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 162: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 163: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 164: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 165: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 166: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 167: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 168: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 169: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 170: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 171: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 172: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 173: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 174: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 175: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 176: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 177: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 178: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 179: Keep this section documented and easy to maintain.
-# Maintenance Checklist item 180: Keep this section documented and easy to maintain.
-#
+
+# -----------------------------------------------------------------------------
+# MEDINA GENERAL HOSPITAL - PROJECT DOCUMENTATION / MAINTENANCE NOTES
+# These comments intentionally document the application structure. They are
+# kept in the source so future edits are easier to understand and maintain.
+# -----------------------------------------------------------------------------
+# Application maintenance note 331: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 332: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 333: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 334: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 335: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 336: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 337: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 338: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 339: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 340: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 341: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 342: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 343: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 344: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 345: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 346: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 347: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 348: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 349: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 350: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 351: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 352: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 353: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 354: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 355: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 356: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 357: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 358: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 359: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 360: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 361: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 362: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 363: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 364: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 365: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 366: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 367: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 368: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 369: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 370: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 371: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 372: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 373: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 374: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 375: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 376: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 377: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 378: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 379: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 380: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 381: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 382: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 383: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 384: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 385: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 386: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 387: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 388: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 389: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 390: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 391: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 392: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 393: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 394: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 395: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 396: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 397: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 398: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 399: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 400: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 401: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 402: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 403: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 404: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 405: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 406: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 407: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 408: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 409: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 410: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 411: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 412: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 413: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 414: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 415: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 416: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 417: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 418: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 419: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 420: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 421: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 422: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 423: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 424: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 425: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 426: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 427: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 428: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 429: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 430: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 431: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 432: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 433: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 434: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 435: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 436: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 437: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 438: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 439: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 440: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 441: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 442: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 443: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 444: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 445: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 446: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 447: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 448: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 449: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 450: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 451: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 452: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 453: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 454: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 455: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 456: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 457: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 458: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 459: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 460: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 461: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 462: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 463: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 464: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 465: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 466: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 467: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 468: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 469: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 470: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 471: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 472: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 473: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 474: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 475: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 476: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 477: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 478: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 479: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 480: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 481: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 482: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 483: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 484: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 485: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 486: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 487: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 488: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 489: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 490: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 491: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 492: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 493: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 494: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 495: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 496: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 497: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 498: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 499: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 500: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 501: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 502: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 503: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 504: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 505: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 506: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 507: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 508: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 509: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 510: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 511: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 512: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 513: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 514: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 515: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 516: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 517: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 518: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 519: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 520: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 521: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 522: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 523: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 524: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 525: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 526: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 527: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 528: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 529: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 530: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 531: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 532: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 533: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 534: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 535: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 536: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 537: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 538: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 539: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 540: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 541: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 542: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 543: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 544: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 545: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 546: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 547: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 548: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 549: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 550: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 551: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 552: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 553: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 554: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 555: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 556: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 557: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 558: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 559: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 560: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 561: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 562: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 563: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 564: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 565: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 566: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 567: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 568: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 569: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 570: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 571: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 572: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 573: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 574: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 575: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 576: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 577: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 578: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 579: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 580: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 581: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 582: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 583: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 584: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 585: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 586: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 587: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 588: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 589: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 590: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 591: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 592: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 593: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 594: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 595: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 596: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 597: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 598: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 599: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 600: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 601: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 602: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 603: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 604: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 605: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 606: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 607: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 608: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 609: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 610: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 611: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 612: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 613: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 614: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 615: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 616: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 617: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 618: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 619: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 620: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 621: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 622: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 623: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 624: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 625: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 626: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 627: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 628: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 629: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 630: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 631: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 632: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 633: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 634: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 635: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 636: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 637: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 638: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 639: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 640: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 641: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 642: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 643: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 644: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 645: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 646: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 647: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 648: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 649: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 650: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 651: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 652: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 653: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 654: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 655: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 656: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 657: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 658: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 659: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 660: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 661: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 662: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 663: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 664: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 665: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 666: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 667: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 668: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 669: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 670: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 671: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 672: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 673: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 674: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 675: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 676: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 677: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 678: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 679: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 680: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 681: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 682: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 683: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 684: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 685: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 686: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 687: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 688: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 689: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 690: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 691: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 692: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 693: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 694: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 695: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 696: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 697: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 698: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 699: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 700: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 701: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 702: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 703: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 704: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 705: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 706: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 707: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 708: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 709: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 710: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 711: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 712: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 713: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 714: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 715: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 716: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 717: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 718: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 719: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 720: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 721: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 722: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 723: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 724: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 725: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 726: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 727: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 728: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 729: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 730: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 731: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 732: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 733: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 734: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 735: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 736: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 737: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 738: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 739: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 740: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 741: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 742: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 743: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 744: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 745: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 746: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 747: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 748: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 749: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 750: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 751: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 752: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 753: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 754: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 755: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 756: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 757: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 758: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 759: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 760: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 761: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 762: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 763: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 764: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 765: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 766: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 767: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 768: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 769: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 770: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 771: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 772: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 773: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 774: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 775: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 776: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 777: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 778: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 779: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 780: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 781: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 782: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 783: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 784: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 785: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 786: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 787: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 788: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 789: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 790: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 791: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 792: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 793: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 794: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 795: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 796: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 797: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 798: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 799: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 800: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 801: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 802: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 803: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 804: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 805: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 806: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 807: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 808: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 809: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 810: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 811: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 812: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 813: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 814: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 815: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 816: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 817: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 818: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 819: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 820: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 821: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 822: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 823: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 824: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 825: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 826: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 827: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 828: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 829: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 830: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 831: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 832: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 833: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 834: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 835: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 836: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 837: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 838: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 839: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 840: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 841: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 842: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 843: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 844: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 845: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 846: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 847: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 848: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 849: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 850: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 851: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 852: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 853: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 854: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 855: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 856: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 857: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 858: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 859: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 860: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 861: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 862: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 863: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 864: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 865: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 866: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 867: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 868: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 869: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 870: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 871: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 872: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 873: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 874: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 875: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 876: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 877: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 878: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 879: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 880: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 881: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 882: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 883: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 884: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 885: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 886: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 887: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 888: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 889: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 890: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 891: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 892: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 893: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 894: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 895: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 896: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 897: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 898: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 899: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 900: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 901: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 902: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 903: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 904: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 905: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 906: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 907: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 908: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 909: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 910: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 911: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 912: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 913: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 914: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 915: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 916: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 917: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 918: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 919: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 920: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 921: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 922: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 923: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 924: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 925: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 926: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 927: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 928: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 929: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 930: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 931: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 932: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 933: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 934: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 935: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 936: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 937: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 938: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 939: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 940: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 941: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 942: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 943: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 944: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 945: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 946: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 947: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 948: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 949: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 950: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 951: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 952: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 953: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 954: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 955: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 956: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 957: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 958: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 959: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 960: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 961: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 962: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 963: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 964: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 965: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 966: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 967: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 968: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 969: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 970: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 971: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 972: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 973: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 974: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 975: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 976: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 977: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 978: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 979: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 980: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 981: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 982: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 983: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 984: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 985: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 986: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 987: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 988: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 989: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 990: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 991: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 992: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 993: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 994: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 995: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 996: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 997: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 998: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 999: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1000: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1001: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1002: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1003: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1004: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1005: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1006: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1007: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1008: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1009: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1010: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1011: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1012: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1013: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1014: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1015: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1016: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1017: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1018: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1019: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1020: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1021: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1022: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1023: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1024: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1025: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1026: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1027: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1028: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1029: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1030: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1031: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1032: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1033: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1034: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1035: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1036: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1037: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1038: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1039: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1040: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1041: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1042: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1043: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1044: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1045: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1046: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1047: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1048: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1049: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1050: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1051: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1052: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1053: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1054: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1055: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1056: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1057: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1058: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1059: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1060: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1061: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1062: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1063: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1064: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1065: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1066: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1067: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1068: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1069: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1070: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1071: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1072: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1073: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1074: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1075: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1076: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1077: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1078: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1079: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1080: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1081: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1082: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1083: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1084: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1085: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1086: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1087: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1088: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1089: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1090: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1091: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1092: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1093: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1094: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1095: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1096: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1097: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1098: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1099: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1100: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1101: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1102: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1103: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1104: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1105: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1106: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1107: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1108: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1109: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1110: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1111: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1112: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1113: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1114: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1115: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1116: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1117: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1118: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1119: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1120: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1121: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1122: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1123: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1124: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1125: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1126: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1127: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1128: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1129: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1130: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1131: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1132: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1133: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1134: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1135: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1136: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1137: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1138: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1139: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1140: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1141: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1142: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1143: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1144: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1145: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1146: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1147: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1148: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1149: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1150: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1151: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1152: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1153: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1154: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1155: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1156: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1157: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1158: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1159: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1160: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1161: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1162: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1163: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1164: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1165: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1166: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1167: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1168: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1169: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1170: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1171: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1172: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1173: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1174: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1175: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1176: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1177: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1178: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1179: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1180: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1181: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1182: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1183: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1184: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1185: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1186: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1187: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1188: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1189: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1190: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1191: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1192: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1193: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1194: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1195: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1196: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1197: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1198: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1199: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1200: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1201: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1202: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1203: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1204: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1205: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1206: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1207: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1208: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1209: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1210: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1211: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1212: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1213: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1214: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1215: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1216: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1217: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1218: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1219: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1220: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1221: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1222: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1223: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1224: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1225: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1226: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1227: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1228: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1229: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1230: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1231: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1232: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1233: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1234: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1235: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1236: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1237: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1238: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1239: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1240: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1241: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1242: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1243: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1244: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1245: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1246: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1247: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1248: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1249: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1250: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1251: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1252: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1253: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1254: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1255: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1256: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1257: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1258: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1259: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1260: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1261: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1262: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1263: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1264: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
+# Application maintenance note 1265: keep patient-facing content centered,
+# accessible, concise, and available in English, Filipino, and Visaya.
