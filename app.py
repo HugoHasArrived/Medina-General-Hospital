@@ -3,14 +3,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from datetime import datetime, timezone
 from pathlib import Path
-import sqlite3
 import os
 import secrets
+import psycopg
+from psycopg.rows import dict_row
 
 app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
-DB_PATH = BASE_DIR / "clinic.db"
+DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
 STATIC_DIR.mkdir(exist_ok=True)
 
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
@@ -23,41 +24,45 @@ app.config.update(
 
 
 def db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+    if not DATABASE_URL:
+        raise RuntimeError("DATABASE_URL is not configured. Add the Render PostgreSQL Connection URL as DATABASE_URL.")
+    return psycopg.connect(DATABASE_URL, row_factory=dict_row, connect_timeout=10)
 
 
 def init_db():
     conn = db()
-    conn.executescript("""
-    CREATE TABLE IF NOT EXISTS staff (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT UNIQUE NOT NULL,
-        password_hash TEXT NOT NULL,
-        role TEXT NOT NULL DEFAULT 'staff',
-        active INTEGER NOT NULL DEFAULT 1,
-        created_at TEXT NOT NULL
-    );
-    CREATE TABLE IF NOT EXISTS assistance_requests (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        patient_name TEXT NOT NULL,
-        contact TEXT NOT NULL,
-        concern TEXT NOT NULL,
-        urgency TEXT NOT NULL DEFAULT 'Normal',
-        preferred_language TEXT NOT NULL DEFAULT 'English',
-        status TEXT NOT NULL DEFAULT 'New',
-        staff_note TEXT NOT NULL DEFAULT '',
-        created_at TEXT NOT NULL,
-        updated_at TEXT NOT NULL
-    );
-    """)
-    if conn.execute("SELECT id FROM staff WHERE username='admin'").fetchone() is None:
-        password = os.environ.get("ADMIN_PASSWORD", "ChangeMe123!")
-        conn.execute(
-            "INSERT INTO staff(username,password_hash,role,created_at) VALUES(?,?,?,?)",
-            ("admin", generate_password_hash(password), "admin", now())
+    with conn.cursor() as cur:
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS staff (
+            id SERIAL PRIMARY KEY,
+            username TEXT UNIQUE NOT NULL,
+            password_hash TEXT NOT NULL,
+            role TEXT NOT NULL DEFAULT 'staff',
+            active INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL
         )
+        """)
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS assistance_requests (
+            id SERIAL PRIMARY KEY,
+            patient_name TEXT NOT NULL,
+            contact TEXT NOT NULL,
+            concern TEXT NOT NULL,
+            urgency TEXT NOT NULL DEFAULT 'Normal',
+            preferred_language TEXT NOT NULL DEFAULT 'English',
+            status TEXT NOT NULL DEFAULT 'New',
+            staff_note TEXT NOT NULL DEFAULT '',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        """)
+        cur.execute("SELECT id FROM staff WHERE username=%s", ("admin",))
+        if cur.fetchone() is None:
+            password = os.environ.get("ADMIN_PASSWORD", "ChangeMe123!")
+            cur.execute(
+                "INSERT INTO staff(username,password_hash,role,created_at) VALUES(%s,%s,%s,%s)",
+                ("admin", generate_password_hash(password), "admin", now())
+            )
     conn.commit()
     conn.close()
 
@@ -252,7 +257,7 @@ def request_assistance():
         return redirect(url_for("home", _anchor="assistance"))
     stamp = now()
     conn = db()
-    conn.execute("""INSERT INTO assistance_requests(patient_name,contact,concern,urgency,preferred_language,status,created_at,updated_at) VALUES(?,?,?,?,?,'New',?,?)""", (name, contact, concern, urgency, language, stamp, stamp))
+    conn.execute("""INSERT INTO assistance_requests(patient_name,contact,concern,urgency,preferred_language,status,created_at,updated_at) VALUES(%s,%s,%s,%s,%s,'New',%s,%s)""", (name, contact, concern, urgency, language, stamp, stamp))
     conn.commit(); conn.close()
     flash("Your assistance request has been sent to the clinic team.", "success")
     return redirect(url_for("home", _anchor="assistance"))
@@ -263,7 +268,7 @@ def staff_login():
     if request.method == "POST":
         username = clean(request.form.get("username"), 80)
         password = request.form.get("password", "")
-        conn = db(); staff = conn.execute("SELECT * FROM staff WHERE username=? AND active=1", (username,)).fetchone(); conn.close()
+        conn = db(); staff = conn.execute("SELECT * FROM staff WHERE username=%s AND active=1", (username,)).fetchone(); conn.close()
         if staff and check_password_hash(staff["password_hash"], password):
             session.clear()
             session["staff_logged_in"] = True
@@ -325,7 +330,7 @@ def update_status(request_id, status):
     if status not in {"New", "Seen", "In Progress", "Resolved"}:
         flash("Invalid status.", "danger")
         return redirect(url_for("staff_dashboard"))
-    conn = db(); conn.execute("UPDATE assistance_requests SET status=?,updated_at=? WHERE id=?", (status, now(), request_id)); conn.commit(); conn.close()
+    conn = db(); conn.execute("UPDATE assistance_requests SET status=%s,updated_at=%s WHERE id=%s", (status, now(), request_id)); conn.commit(); conn.close()
     return redirect(url_for("staff_dashboard"))
 
 
@@ -333,7 +338,7 @@ def update_status(request_id, status):
 @staff_required
 def update_note(request_id):
     note = clean(request.form.get("staff_note"), 2000)
-    conn = db(); conn.execute("UPDATE assistance_requests SET staff_note=?,updated_at=? WHERE id=?", (note, now(), request_id)); conn.commit(); conn.close()
+    conn = db(); conn.execute("UPDATE assistance_requests SET staff_note=%s,updated_at=%s WHERE id=%s", (note, now(), request_id)); conn.commit(); conn.close()
     return redirect(url_for("staff_dashboard"))
 
 
