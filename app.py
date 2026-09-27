@@ -47,15 +47,30 @@ def init_db():
     staff_collection.create_index("username", unique=True)
     requests_collection.create_index([("status_rank", 1), ("urgency_rank", 1), ("created_at", -1)])
 
-    if staff_collection.find_one({"username": "admin"}) is None:
-        password = os.environ.get("ADMIN_PASSWORD", "ChangeMe123!")
+    # Keep the built-in admin account synchronized with ADMIN_PASSWORD.
+    # This fixes the case where an admin account was created earlier with an
+    # old password: changing ADMIN_PASSWORD in Render will reset the stored
+    # password hash on the next deployment/startup.
+    admin_password = os.environ.get("ADMIN_PASSWORD", "ChangeMe123!")
+    admin = staff_collection.find_one({"username": "admin"})
+
+    if admin is None:
         staff_collection.insert_one({
             "username": "admin",
-            "password_hash": generate_password_hash(password),
+            "password_hash": generate_password_hash(admin_password),
             "role": "admin",
             "active": True,
             "created_at": now(),
         })
+    else:
+        staff_collection.update_one(
+            {"_id": admin["_id"]},
+            {"$set": {
+                "password_hash": generate_password_hash(admin_password),
+                "role": "admin",
+                "active": True,
+            }}
+        )
 
 
 STATUS_RANK = {
