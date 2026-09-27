@@ -287,7 +287,6 @@ def staff_login():
         if staff and check_password_hash(staff["password_hash"], password):
             session.clear()
             session["staff_logged_in"] = True
-            session["staff_id"] = staff["id"]
             session["staff_username"] = staff["username"]
             session["staff_role"] = staff["role"]
             return redirect(url_for("staff_dashboard"))
@@ -350,7 +349,7 @@ def update_status(request_id, status):
         flash("Invalid status.", "danger")
         return redirect(url_for("staff_dashboard"))
     requests_collection.update_one(
-        {"_id": request_id},
+        {"id": request_id},
         {"$set": {
             "status": status,
             "status_rank": STATUS_RANK[status],
@@ -365,7 +364,7 @@ def update_status(request_id, status):
 def update_note(request_id):
     note = clean(request.form.get("staff_note"), 2000)
     requests_collection.update_one(
-        {"_id": request_id},
+        {"id": request_id},
         {"$set": {
             "staff_note": note,
             "updated_at": now(),
