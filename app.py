@@ -5,6 +5,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 import os
 import secrets
+import smtplib
+from email.message import EmailMessage
+from email.utils import parseaddr
 from pymongo import MongoClient, ReturnDocument
 
 app = Flask(__name__)
@@ -30,6 +33,32 @@ app.config.update(
     SESSION_COOKIE_SECURE=bool(os.environ.get("RENDER")),
     SESSION_COOKIE_PERMANENT=False,
 )
+
+# Email settings. Keep these in Render Environment Variables.
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com").strip()
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
+SMTP_USERNAME = os.environ.get("SMTP_USERNAME", "").strip()
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "").strip()
+SMTP_FROM = os.environ.get("SMTP_FROM", SMTP_USERNAME).strip()
+
+
+def is_email(value):
+    address = parseaddr(value or "")[1].strip()
+    return "@" in address and "." in address.rsplit("@", 1)[-1] and len(address) <= 254
+
+
+def send_staff_email(recipient, subject, body):
+    if not SMTP_USERNAME or not SMTP_PASSWORD:
+        raise RuntimeError("Email is not configured. Set SMTP_USERNAME and SMTP_PASSWORD in Render Environment Variables.")
+    message = EmailMessage()
+    message["From"] = SMTP_FROM or SMTP_USERNAME
+    message["To"] = recipient
+    message["Subject"] = subject
+    message.set_content(body)
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
+        server.starttls()
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        server.send_message(message)
 
 
 def next_request_id():
@@ -325,8 +354,13 @@ def staff_dashboard():
             actions += f"<form method='post' action='{url_for('update_status',request_id=r['id'],status='In Progress')}' style='display:inline'><button class='btn primary'>In Progress</button></form>"
         if r["status"] != "Resolved":
             actions += f"<form method='post' action='{url_for('update_status',request_id=r['id'],status='Resolved')}' style='display:inline'><button class='btn green'>Resolve</button></form>"
+        email_action = ""
+        if is_email(r["contact"]):
+            email_action = f"<div class='note' style='margin-top:12px'><form method='post' action='{url_for('email_patient',request_id=r['id'])}'><label><b>Email Patient</b></label><input name='subject' value='Medina General Hospital — Assistance Request #{r['id']}' maxlength='200' required style='width:100%;padding:10px;margin:6px 0;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text)'><textarea name='message' maxlength='5000' required placeholder='Write your message to the patient...'></textarea><br><button class='btn primary' type='submit'>✉️ Send Email</button></form></div>"
+        else:
+            email_action = "<div class='muted' style='margin-top:10px;font-size:12px'>No email reply button because this request does not contain a valid email address.</div>"
         cards.append(f"""
-        <article class='request {new}'><div class='request-name'>{r['patient_name']}</div><div class='muted'>Request #{r['id']} • {r['created_at'].replace('T',' ')} UTC</div><div class='badges'><span class='badge'>{r['status']}</span><span class='badge {urgent}'>{r['urgency']}</span><span class='badge'>{r['preferred_language']}</span></div><div class='grid'><div class='field'><b>Contact</b><span>{r['contact']}</span></div><div class='field'><b>Need</b><span>{r['concern']}</span></div><div class='field'><b>Staff Note</b><span>{r['staff_note'] or 'No note yet.'}</span></div></div><div class='note'><form method='post' action='{url_for('update_note',request_id=r['id'])}'><textarea name='staff_note' maxlength='2000' placeholder='Internal follow-up note...'>{r['staff_note']}</textarea><br><button class='btn' type='submit'>Save Note</button>{actions}</form></div></article>""")
+        <article class='request {new}'><div class='request-name'>{r['patient_name']}</div><div class='muted'>Request #{r['id']} • {r['created_at'].replace('T',' ')} UTC</div><div class='badges'><span class='badge'>{r['status']}</span><span class='badge {urgent}'>{r['urgency']}</span><span class='badge'>{r['preferred_language']}</span></div><div class='grid'><div class='field'><b>Contact</b><span>{r['contact']}</span></div><div class='field'><b>Need</b><span>{r['concern']}</span></div><div class='field'><b>Staff Note</b><span>{r['staff_note'] or 'No note yet.'}</span></div></div><div class='note'><form method='post' action='{url_for('update_note',request_id=r['id'])}'><textarea name='staff_note' maxlength='2000' placeholder='Internal follow-up note...'>{r['staff_note']}</textarea><br><button class='btn' type='submit'>Save Note</button>{actions}</form></div>{email_action}</article>""")
     body = f"""
     <section class='hero'><div class='kicker'>Protected Clinic Area</div><h1>Staff Dashboard</h1><p class='muted'>Welcome, {session.get('staff_username','Staff')}. New patient assistance requests appear here.</p></section>
     <section><div class='stats'><div class='card stat'><strong id='newCount'>{new_count()}</strong><span class='muted'>New requests</span></div><div class='card stat'><strong>{active}</strong><span class='muted'>Active requests</span></div><div class='card stat'><strong>{resolved}</strong><span class='muted'>Resolved requests</span></div></div></section>
@@ -370,6 +404,39 @@ def update_note(request_id):
             "updated_at": now(),
         }}
     )
+    return redirect(url_for("staff_dashboard"))
+
+
+@app.post("/staff/request/<int:request_id>/email")
+@staff_required
+def email_patient(request_id):
+    patient = requests_collection.find_one({"id": request_id})
+    if not patient:
+        flash("Request not found.", "danger")
+        return redirect(url_for("staff_dashboard"))
+
+    recipient = parseaddr(patient.get("contact", ""))[1].strip()
+    subject = clean(request.form.get("subject"), 200)
+    message = clean(request.form.get("message"), 5000)
+
+    if not is_email(recipient):
+        flash("This request does not contain a valid email address.", "danger")
+        return redirect(url_for("staff_dashboard"))
+    if not subject or not message:
+        flash("Please enter an email subject and message.", "danger")
+        return redirect(url_for("staff_dashboard"))
+
+    try:
+        send_staff_email(recipient, subject, message)
+        requests_collection.update_one(
+            {"id": request_id},
+            {"$set": {"last_email_sent_at": now(), "updated_at": now()}}
+        )
+        flash(f"Email sent successfully to {recipient}.", "success")
+    except Exception as exc:
+        app.logger.exception("Unable to send patient email")
+        flash(f"Email could not be sent: {exc}", "danger")
+
     return redirect(url_for("staff_dashboard"))
 
 
